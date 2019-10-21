@@ -81,8 +81,11 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
         <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">LOGIN</a></li>
+        <li><a href="register.php">REGISTER</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
