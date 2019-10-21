@@ -2,7 +2,7 @@
 // echo "hello";
 require_once("db.php");
 require_once("functions.php");
-//session_start();
+session_start();
 if(!empty($_POST["email"]))
 {
     //echo "hello";
@@ -55,6 +55,7 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = $uid;
             $_SESSION['nid'] = NULL;
             $_SESSION['uname'] = $uname;
+           
             header("Location: ../../volunteers.php");
         }
         elseif($role==3){
@@ -63,7 +64,10 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
             $_SESSION['uname'] = $uname;
+            $_SESSION['email'] = $row['U_EMAIL'];
+            //echo $_SESSION['uname'];
             header("Location: ../../ngo.php");
+            //exit();
         }
         elseif($role==4){
             $_SESSION['uid'] = $uid;

@@ -2,7 +2,7 @@
 //echo "hello";
 require_once("db.php");
 require_once("functions.php");
-session_start();
+//session_start();
 
 // echo "hello";
 
