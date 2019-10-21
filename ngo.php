@@ -1,14 +1,28 @@
 <!DOCTYPE html>
+
 <?php
-//include auth.php file on all secure pages
-//require("pages/includes/loginfunction.php");
- session_start();
-// if (session_status() == PHP_SESSION_ACTIVE) {
-//     echo "Session is active";
-//   }
-//   else{
-//       echo "jgsdsd";
-//   }
+require("pages/includes/ngofunction.php");
+//session_start();
+//print_r($_SESSION);
+if($_SESSION['nid']==NULL)
+{
+    header("Location: index.php");
+}
+// echo "string";
+$ngo=getngo();
+$event=getngoevent();
+$donations=getngodonations();
+
+// print_r();
+// print_r($ngo['ORGNAME']);
+// print_r($_SESSION);
+//if($_SESSION['nid']==NULL)
+//{
+//    header("Location: index.php");
+//}
+//$donations=getngodonations();
+// print_r($donations);
+
 ?>
 <html lang="">
 <head>
@@ -58,7 +72,9 @@
       
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Pages</a>
+        <li><a href="../index.html">profile</a></li>
+        <li><a href="../index.html">about</a></li>
+        <!-- <li class="active"><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="full-width.html">Full Width</a></li>
@@ -66,8 +82,8 @@
             <li><a href="sidebar-right.html">Sidebar Right</a></li>
             <li class="active"><a href="basic-grid.html">Basic Grid</a></li>
           </ul>
-        </li>
-        <li><a class="drop" href="#">Dropdown</a>
+        </li> -->
+        <!-- <li><a class="drop" href="#">Dropdown</a>
           <ul>
             <li><a href="#">Level 2</a></li>
             <li><a class="drop" href="#">Level 2 + Drop</a>
@@ -79,11 +95,17 @@
             </li>
             <li><a href="#">Level 2</a></li>
           </ul>
-        </li>
+        </li> -->
+        <!-- <li><a href="#">Link Text</a></li>
         <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
+        <li><a href="#">Link Text</a></li> -->
+        <li><a href="../index.html"></a></li>
+        <li><a href="../index.html"></a></li>
+        <li><a href="../index.html"></a></li>
+        <li><a href="../index.html"></a></li>
+        <li><a href="../index.html"></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+        <li><a href="#">LOGOUT</a></li>
       </ul>
       
     </nav>
@@ -93,26 +115,144 @@
     <div id="breadcrumb" class="hoc clear"> 
      
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">NGO PROFILE</a></li><BR><BR>
       </ul>
-      
+      <h5>welcome</h5>
     </div>
   </div>
 
 </div>
 <div class="wrapper row3">
   <main class="hoc container clear"> 
-    <div class="content"> 
-      write everything here
-      <?php
-       
-      echo  $_SESSION['email'];  ?>
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first"> 
+        <div id="comments">
+            
+            <ul>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total Volunteers</a><h1>
+                    <h1>826666<h1>
+                </header>
+                
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total NGO's</a><h1>
+                    <h1>826666<h1>
+                </header>
+                
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Donations Done</a><h1>
+                    <h1>95862<h1>
+                </header>
+                
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new donations</a><h1>
+                    <h1>7264<h1>
+                </header>
+                
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new Volunteers</a><h1>
+                    <h1>3294<h1>
+                </header>
+                
+                </article>
+            </li>
+            </ul>
+            
+        </div>
     </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="content three_quarter"> 
+      <!-- ################################################################################################ -->
+        <section class=" clear"> 
+        
+        
+            <div class="group latest">
+            
+                <article >
+                    <figure><a href="#"><img src="images/demo/ngo3.gif" alt=""></a>
+                    <figcaption>
+                        <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
+                    </figcaption>
+                    </figure>
+                    <div class="txtwrap">
+                    <h4 class="heading">HELLO NGO</h4>
+                    
+                    <p>We value the trust our donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. GiveAssured is our seal of trust built over 18 years of operations</p>
+                    
+                    </div>
+                </article>
+            
+            </div>
+
+        
+            <div class="clear"></div>
+        
+        </section><br><br>
+        <div class="one_half first"> 
+            <section class="  clear"> 
+                <div class="group latest">
+                    <article >
+                        <div class="txtwrap">
+                        <center><h2 class="heading"><a href="">NGO EVENT >></a></h2></center>
+                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
+                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
+                        <a href="add-event.php"><button class="btn" >ADD EVENTS</button></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="clear"></div>
+            </section>
+        </div>
+        <div class="one_half"> 
+        <section class="  clear"> 
+                <div class="group latest">
+                    <article >
+                        <div class="txtwrap">
+                        <center><h2 class="heading"><a href="">NGO DONATION >></a></h2></center>
+                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
+                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
+                        <a href="add-donation.php"><button class="btn" >ADD DONATIONS</button></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="clear"></div>
+            </section>
+        </div>
+      <!-- ################################################################################################ -->
+    </div>
+      <!-- ################################################################################################ -->
+    
+    
+    <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
+    
   </main>
 </div>
 <div class="wrapper row4">
