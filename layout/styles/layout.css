@@ -28,6 +28,12 @@ File: Layout CSS
 .textwrap	{
 	background-color: #E1E1E1;
 }
+.wrapper_overlay  {
+  background-color: grey;
+}
+.breadcrumb h1  {
+  text-align: center;
+}
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0, .row0 a{}

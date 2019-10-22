@@ -19,7 +19,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
+  <div id="topbar" class="hoc clear">
     <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
@@ -37,10 +37,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
+  <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">Placeholder</a></h1>
+      <h1 ><a href="index.php">BE THE CHANGE</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
     <!-- ################################################################################################ -->
@@ -50,13 +50,14 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
-    <nav id="mainav" class="hoc clear"> 
+    <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a><li>
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
@@ -93,8 +94,8 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
-  <div class="wrapper overlay">
-    <article id="pageintro" class="hoc clear"> 
+  <div class="wrapper_overlay">
+    <article id="pageintro" class="hoc clear">
       <!-- ################################################################################################ -->
       <h3 class="heading">Our Mission</h3>
       <p>"LIGHTEN A LIFE WITH A RAY OF HOPE" <br> -Mahatma Gandhi
@@ -110,10 +111,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="group">             
+    <div class="group">
       <div class="one_half first">
 
         <h6 class="heading font-x1"><a href="#">WELCOME TO OUR FAMILY</a></h6>
@@ -145,7 +146,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <article>
               <h6 class="heading font-x1"><a href="#">Sed placerat a ante</a></h6>
               <p class="nospace">Nullam vitae iaculis velit suspendisse pharetra lobortis diam id tempor [&hellip;]</p>
-            </article> 
+            </article>
           </li>
         </ul>
       </div> -->
@@ -160,7 +161,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper bgded" style="background-image:url('images/demo/backgrounds/02.png');">
   <div class="hoc split clear">
-    <section> 
+    <section>
       <!-- ################################################################################################ -->
       <h2 class="heading">Nulla ultrices fusce</h2>
       <p class="btmspace-50">Purus dui dignissim vitae convallis et lacinia ultrices nunc mauris consequat faucibus leo at ornare aenean lorem ipsum convallis sed volutpat quis.</p>
@@ -189,7 +190,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay coloured" style="background-image:url('images/demo/backgrounds/03.png');">
   <section class="hoc container clear center">
-    <div class="cta sectiontitle"> 
+    <div class="cta sectiontitle">
       <!-- ################################################################################################ -->
       <h3 class="heading"><strong>Molestie lobortis sed ut tempus lectus integer quis</strong></h3>
       <p class="btmspace-50">Nam in ante vel erat sodales feugiat et vel ex aliquam ut interdum nisl in hac habitasse platea dictumst.</p>
@@ -202,7 +203,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <section class="hoc container clear"> 
+  <section class="hoc container clear">
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
       <h6 class="heading">Laoreet vestibulum</h6>
@@ -259,7 +260,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/04.png');">
-  <div class="hoc container testimonials clear"> 
+  <div class="hoc container testimonials clear">
     <!-- ################################################################################################ -->
     <article><img src="images/demo/100x100.png" alt="">
       <blockquote>Turpis egestas vestibulum diam est tempor id interdum nec lobortis sit amet neque quisque quis rhoncus dolor morbi tempor lectus fermentum elementum condimentum leo lacus.</blockquote>
@@ -272,7 +273,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <section class="hoc container clear"> 
+  <section class="hoc container clear">
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
       <h6 class="heading">Malesuada fames</h6>
@@ -336,7 +337,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/05.png');">
-  <figure class="hoc clear"> 
+  <figure class="hoc clear">
     <!-- ################################################################################################ -->
     <ul class="nospace group logos">
       <li class="one_quarter first"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
@@ -351,7 +352,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row4">
-  <footer id="footer" class="hoc clear"> 
+  <footer id="footer" class="hoc clear">
     <!-- ################################################################################################ -->
     <div class="one_third first">
       <h6 class="heading">Arcu accumsan id felis</h6>
@@ -411,7 +412,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
+  <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
     <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
