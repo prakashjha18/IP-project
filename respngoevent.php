@@ -1,52 +1,50 @@
 <!DOCTYPE html>
-
+<!--
+Template Name: Drywest
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
 <?php
-require("pages/includes/ngofunction.php");
-//session_start();
-//print_r($_SESSION);
+require_once("pages/includes/functions.php");
+session_start();
+// print_r($_SESSION);
+$nid=$_SESSION['nid'];
 if($_SESSION['nid']==NULL)
 {
     header("Location: index.php");
 }
-// echo "string";
-$ngo=getngo();
-$event=getngoevent();
-$donations=getngodonations();
 
-// print_r();
-// print_r($ngo['ORGNAME']);
-// print_r($_SESSION);
-//if($_SESSION['nid']==NULL)
-//{
-//    header("Location: index.php");
-//}
-//$donations=getngodonations();
-// print_r($donations);
-
+$events=ngoevents($nid);
+// echo "<pre>";
+// print_r($events);
+// exit;
 ?>
 <html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <title>Drywest | Pages | Basic Grid</title>
-<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
-
+/* DEMO ONLY */
 .container .demo{text-align:center;}
 .container .demo div{padding:8px 0;}
 .container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
 .container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
-
+/* DEMO ONLY */
 </style>
 </head>
 <body id="top">
-
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row0">
   <div id="topbar" class="hoc clear">
-
+    <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
       <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
@@ -55,28 +53,34 @@ $donations=getngodonations();
       <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
       <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
-
+    <!-- ################################################################################################ -->
   </div>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
+    <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-        <h1><a href="../index.html">Drywest</a></h1>
+      <h1><a href="../index.html">Drywest</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
-
+    <!-- ################################################################################################ -->
   </header>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
-
+  <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
-
+      <!-- ################################################################################################ -->
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html">profile</a></li>
-        <li><a href="../index.html">about</a></li>
-        <!-- <li class="active"><a class="drop" href="#">Pages</a>
+        <li class="active"><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="full-width.html">Full Width</a></li>
@@ -84,8 +88,8 @@ $donations=getngodonations();
             <li><a href="sidebar-right.html">Sidebar Right</a></li>
             <li class="active"><a href="basic-grid.html">Basic Grid</a></li>
           </ul>
-        </li> -->
-        <!-- <li><a class="drop" href="#">Dropdown</a>
+        </li>
+        <li><a class="drop" href="#">Dropdown</a>
           <ul>
             <li><a href="#">Level 2</a></li>
             <li><a class="drop" href="#">Level 2 + Drop</a>
@@ -97,34 +101,36 @@ $donations=getngodonations();
             </li>
             <li><a href="#">Level 2</a></li>
           </ul>
-        </li> -->
-        <!-- <li><a href="#">Link Text</a></li>
+        </li>
         <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li> -->
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <li><a href="#">LOGOUT</a></li>
+        <li><a href="#">Link Text</a></li>
+        <li><a href="#">Link Text</a></li>
+        <li><a href="#">Long Link Text</a></li>
       </ul>
-
+      <!-- ################################################################################################ -->
     </nav>
   </div>
-
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
-
+      <!-- ################################################################################################ -->
       <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">NGO PROFILE</a></li><BR><BR>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Ipsum</a></li>
+        <li><a href="#">Dolor</a></li>
       </ul>
-      <h5>welcome</h5>
+      <!-- ################################################################################################ -->
     </div>
   </div>
-
+  <!-- ################################################################################################ -->
 </div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row3">
   <main class="hoc container clear">
     <!-- main body -->
@@ -190,62 +196,31 @@ $donations=getngodonations();
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <div class="content three_quarter">
-      <!-- ################################################################################################ -->
-        <section class=" clear">
+
+      <section class=" clear">
+          <!-- ################################################################################################ -->
+
+          <div class="group latest">
+            <article class="one_third first">
+              <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+                <figcaption>
+                  <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
+                </figcaption>
+              </figure>
+              <div class="txtwrap">
+                <h4 class="heading">Help Studentse</h4>
+
+                <p>Tincidunt at maximus sit amet odio donec nec nulla vel velit rutrum hendrerit in hac habitasse platea dictumst in sit […]</p>
+                <footer><button class="btn">read more</button></footer>
+              </div>
+            </article>
+            
+          </div>
+          <!-- ################################################################################################ -->
+          <div class="clear"></div>
+        </section>
 
 
-            <div class="group latest">
-
-                <article >
-                    <figure><a href="#"><img src="images/demo/ngo3.gif" alt=""></a>
-                    <figcaption>
-                        <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
-                    </figcaption>
-                    </figure>
-                    <div class="txtwrap">
-                    <h4 class="heading">HELLO NGO</h4>
-
-                    <p>We value the trust our donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. GiveAssured is our seal of trust built over 18 years of operations</p>
-
-                    </div>
-                </article>
-
-            </div>
-
-
-            <div class="clear"></div>
-
-        </section><br><br>
-        <div class="one_half first">
-            <section class="  clear">
-                <div class="group latest">
-                    <article >
-                        <div class="txtwrap">
-                        <center><h2 class="heading"><a href="respngoevent.php">NGO EVENT >></a></h2></center>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
-                        <a href="add-event.php"><button class="btn" >ADD EVENTS</button></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="clear"></div>
-            </section>
-        </div>
-        <div class="one_half">
-        <section class="  clear">
-                <div class="group latest">
-                    <article >
-                        <div class="txtwrap">
-                        <center><h2 class="heading"><a href="">NGO DONATION >></a></h2></center>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
-                        <a href="add-donation.php"><button class="btn" >ADD DONATIONS</button></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="clear"></div>
-            </section>
-        </div>
       <!-- ################################################################################################ -->
     </div>
       <!-- ################################################################################################ -->
@@ -257,8 +232,16 @@ $donations=getngodonations();
 
   </main>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear">
+    <!-- ################################################################################################ -->
     <div class="one_third first">
       <h6 class="heading">Arcu accumsan id felis</h6>
       <ul class="nospace btmspace-30 linklist contact">
@@ -310,14 +293,23 @@ $donations=getngodonations();
         </fieldset>
       </form>
     </div>
+    <!-- ################################################################################################ -->
   </footer>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
     <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
   </div>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>
