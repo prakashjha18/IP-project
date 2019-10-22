@@ -58,6 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <ul class="clear">
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a><li>
+        <li><a href="about.html">About Us</li>
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
