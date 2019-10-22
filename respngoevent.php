@@ -201,20 +201,51 @@ $events=ngoevents($nid);
           <!-- ################################################################################################ -->
 
           <div class="group latest">
-            <article class="one_third first">
-              <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
-                <figcaption>
-                  <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
-                </figcaption>
-              </figure>
-              <div class="txtwrap">
-                <h4 class="heading">Help Studentse</h4>
 
-                <p>Tincidunt at maximus sit amet odio donec nec nulla vel velit rutrum hendrerit in hac habitasse platea dictumst in sit […]</p>
-                <footer><button class="btn">read more</button></footer>
-              </div>
-            </article>
-            
+              <?php
+
+                 foreach ($events as $key => $value) {
+                   // print_r($value[2]);
+                   ?>
+                   <article class="one_third">
+                   <div class="first1">
+                       <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                      <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>
+
+                      <div class="txtwrap">
+
+                          <p class="bold1"><?php print_r($value[2]) ?></p>
+
+                          <p class="bold2"><?php print_r($value[3]) ?></p>
+                          <form action="javascript:void(0);" >
+                             <!-- <span><a href="#"><button class="btn read-more">Read More</button></a></span>  -->
+                             <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
+                             <input type="hidden" name="vid" id="vid" value="8">
+                             <!-- <button class="btn read-more mores" type="submit">Participate</button></span>  -->
+                           </form>
+                           <?php
+                                if($value[7]==1){
+                           ?>
+
+                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing event</label></a></span>
+                           <?php
+                               }
+                               else{
+                           ?>
+                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful event</label></a></span>
+                           <?php
+                               }
+                           ?>
+                      </div>
+                  </div>
+                  </article>
+                   <?php
+                 }
+
+                 ?>
+
+
+
           </div>
           <!-- ################################################################################################ -->
           <div class="clear"></div>
