@@ -8,7 +8,7 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <?php
 require_once("pages/includes/functions.php");
-session_start();
+ session_start();
 // print_r($_SESSION);
 $nid=$_SESSION['nid'];
 if($_SESSION['nid']==NULL)
@@ -16,7 +16,7 @@ if($_SESSION['nid']==NULL)
     header("Location: index.php");
 }
 
-$events=ngoevents($nid);
+$donate=ngodonations($nid);
 // echo "<pre>";
 // print_r($events);
 // exit;
@@ -29,6 +29,9 @@ $events=ngoevents($nid);
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
+<style>
+
+
 /* DEMO ONLY */
 .container .demo{text-align:center;}
 .container .demo div{padding:8px 0;}
@@ -197,59 +200,48 @@ $events=ngoevents($nid);
     <!-- ################################################################################################ -->
     <div class="content three_quarter">
 
-      <section class=" clear">
+
           <!-- ################################################################################################ -->
 
           <div class="grid-container1">
-
-              <?php
-
-                 foreach ($events as $key => $value) {
-                   // print_r($value[2]);
-                   ?>
-                   <article class="grid-item1">
-                   <div class="first1">
-                       <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
-                      <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>
+            <?php
+                foreach ($donate as $key => $value) {
+                  // print_r($value[2]);
+                  ?>
+                  <div class="grid-item1">
+                      <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                     <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>  -->
+                      <img src="css/img/pic5.jpg" height="10px" width="10px">
 
                       <div class="txtwrap">
 
-                          <p class="bold1"><?php print_r($value[2]) ?></p>
+                         <p class="bold1"><?php print_r($value[4]) ?></p>
 
-                          <p class="bold2"><?php print_r($value[3]) ?></p>
-                          <form action="javascript:void(0);" >
-                             <!-- <span><a href="#"><button class="btn read-more">Read More</button></a></span>  -->
-                             <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
-                             <input type="hidden" name="vid" id="vid" value="8">
-                             <!-- <button class="btn read-more mores" type="submit">Participate</button></span>  -->
-                           </form>
-                           <?php
-                                if($value[7]==1){
-                           ?>
+                         <p class="bold2"><?php print_r($value[5]) ?></p>
+                         
+                          <?php
+                               if($value[7]==1){
+                          ?>
+                              <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing Donations</label></a></span>
+                          <?php
+                              }
+                              else{
+                          ?>
+                              <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful Donation</label></a></span>
+                          <?php
+                              }
+                          ?>
+                        </div>
 
-                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing event</label></a></span>
-                           <?php
-                               }
-                               else{
-                           ?>
-                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful event</label></a></span>
-                           <?php
-                               }
-                           ?>
-                      </div>
-                  </div>
-                  </article>
-                   <?php
-                 }
-
-                 ?>
-
-
-
+                 </div>
+                  <?php
+                }
+                ?>
+              </div>
           </div>
           <!-- ################################################################################################ -->
           <div class="clear"></div>
-        </section>
+
 
 
       <!-- ################################################################################################ -->
@@ -263,6 +255,7 @@ $events=ngoevents($nid);
 
   </main>
 </div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

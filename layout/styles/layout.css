@@ -8,10 +8,26 @@ Licence URI: https://www.os-templates.com/template-terms
 File: Layout CSS
 */
 
+
 @import url("font-awesome.min.css");
 @import url("framework.css");
 
+.grid-container1 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
 
+}
+.grid-item1{
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 5px;
+}
+.first1	{
+	background-color: #E1E1E1;
+}
+.textwrap	{
+	background-color: #E1E1E1;
+}
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0, .row0 a{}

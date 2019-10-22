@@ -236,7 +236,7 @@ $donations=getngodonations();
                 <div class="group latest">
                     <article >
                         <div class="txtwrap">
-                        <center><h2 class="heading"><a href="">NGO DONATION >></a></h2></center>
+                        <center><h2 class="heading"><a href="respngodonation.php">NGO DONATION >></a></h2></center>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
                         <a href="add-donation.php"><button class="btn" >ADD DONATIONS</button></a>
