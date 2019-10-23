@@ -224,7 +224,7 @@ $donations=getngodonations();
                         <center><h2 class="heading"><a href="respngoevent.php">NGO EVENT >></a></h2></center>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
-                        <a href="add-event.php"><button class="btn" >ADD EVENTS</button></a>
+                        <a href="add-event.php"><button class="btn" style="margin-left : 35%">ADD EVENTS</button></a>
                         </div>
                     </article>
                 </div>
@@ -239,7 +239,7 @@ $donations=getngodonations();
                         <center><h2 class="heading"><a href="respngodonation.php">NGO DONATION >></a></h2></center>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
                         <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
-                        <a href="add-donation.php"><button class="btn" >ADD DONATIONS</button></a>
+                        <a href="add-donation.php"><button class="btn" style="margin-left : 32%" >ADD DONATIONS</button></a>
                         </div>
                     </article>
                 </div>

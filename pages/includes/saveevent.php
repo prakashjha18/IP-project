@@ -31,7 +31,7 @@ if(!$connection){
     //   $location="JDGDFFFFF";
     //   $desc="JGDSJ";
     //   $req_reg=4;
-      $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, location, REQ_REGISTERED,REGISTERED,STATUS_N) VALUES ($nid,'$etitle','$location','$desc',$req_reg,0,1)";
+      $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, location, REQ_REGISTERED,REGISTERED,STATUS_N) VALUES ($nid,'$etitle','$desc','$location',$req_reg,0,1)";
       $resultset = mysqli_query($connection,$query);
 
       // $query->execute();
