@@ -31,9 +31,12 @@ File: Layout CSS
 .wrapper_overlay  {
   background-color: grey;
 }
-.breadcrumb h1  {
-  text-align: center;
+.feedback {
+  background-color : #E2E0E0;
+  border-style: outset;
+  border-color: black;
 }
+
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0, .row0 a{}
@@ -85,7 +88,7 @@ File: Layout CSS
 /* Content */
 .container .content{}
 
-.sectiontitle{display:block; max-width:55%; margin:0 auto 80px; text-align:center;}
+.sectiontitle{display:none; max-width:55%; margin:0 auto 80px; text-align:center;}
 .sectiontitle *{margin:0;}
 .cta.sectiontitle{margin-bottom:0;}
 .cta.sectiontitle .heading, .cta.sectiontitle p{margin-bottom:30px;}

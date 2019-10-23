@@ -55,34 +55,26 @@ Licence URI: https://www.os-templates.com/template-terms
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
-      <ul class="clear">
+      <ul class="clear" style="margin-top : 0">
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a><li>
         <li><a href="about.html">About Us</li>
-        <li><a class="drop" href="#">Pages</a>
-          <ul>
-            <li><a href="pages/gallery.html">Gallery</a></li>
-            <li><a href="pages/full-width.html">Full Width</a></li>
-            <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-            <li><a href="pages/basic-grid.html">Basic Grid</a></li>
-          </ul>
-        </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
+
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
+        <li><a href="#">              </a></li>
         <li><a href="#">              </a></li>
         <li><a href="#">              </a></li>
         <li><a href="#">              </a></li>
@@ -95,8 +87,8 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
-  <div class="wrapper_overlay">
-    <article id="pageintro" class="hoc clear">
+  <div class="wrapper">
+    <article id="pageintro" class="hoc clear" style="background-image:url('images/demo/backgrounds/01.png') background-size: 100%">
       <!-- ################################################################################################ -->
       <h3 class="heading">Our Mission</h3>
       <p>"LIGHTEN A LIFE WITH A RAY OF HOPE" <br> -Mahatma Gandhi
@@ -121,7 +113,6 @@ Licence URI: https://www.os-templates.com/template-terms
         <h6 class="heading font-x1"><a href="#">WELCOME TO OUR FAMILY</a></h6>
         <p>We value the trust our volunteers and donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. So you can engage without the worry of your help being misused.</p>
         <p class="btmspace-30"> Our NGO through awareness programs for parents/ guardians is working for under privileged, BPL families as homeless families, Street children & youth for last 10 years. We firmly believe that working in collaboration with Government Machinery and all stake holders (like children, parents, NGOs, Remand homes, counselors, Trainers, employers etc.) will help reduce menace of child abuse, child labour and child exploitation. In order to promote</p>
-        <footer><a class="btn" href="#">Read More &raquo;</a></footer>
       </div>
       <!-- <div class="one_half">
         <ul class="nospace group">
@@ -160,7 +151,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded" style="background-image:url('images/demo/backgrounds/02.png');">
+<div class="wrapper bgded" style="background-image:url('images/demo/backgrounds/02.png'); background-size : 100% 100%">
   <div class="hoc split clear">
     <section>
       <!-- ################################################################################################ -->
@@ -189,23 +180,12 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay coloured" style="background-image:url('images/demo/backgrounds/03.png');">
-  <section class="hoc container clear center">
-    <div class="cta sectiontitle">
-      <!-- ################################################################################################ -->
-      <h3 class="heading"><strong>Molestie lobortis sed ut tempus lectus integer quis</strong></h3>
-      <p class="btmspace-50">Nam in ante vel erat sodales feugiat et vel ex aliquam ut interdum nisl in hac habitasse platea dictumst.</p>
-      <footer><a class="btn" href="#">Vel feugiat diam</a></footer>
-      <!-- ################################################################################################ -->
-    </div>
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <section class="hoc container clear">
-    <!-- ################################################################################################ -->
     <div class="sectiontitle">
       <h6 class="heading">Laoreet vestibulum</h6>
       <p>Turpis vel nulla luctus gravida maecenas tempus</p>
@@ -213,26 +193,23 @@ Licence URI: https://www.os-templates.com/template-terms
     <ul class="nospace group elements">
       <li class="one_third first">
         <article><a href="#"><i class="fa fa-plane"></i></a>
-          <h6 class="heading">Non sapien ligula</h6>
+          <h6 class="heading">NGO</h6>
           <p>Sed venenatis tempor massa nec consequat suspendisse congue sit amet elit ac fringilla [&hellip;]</p>
-          <footer><a href="#">View Details &raquo;</a></footer>
         </article>
       </li>
       <li class="one_third">
         <article><a href="#"><i class="fa fa-wheelchair-alt"></i></a>
-          <h6 class="heading">Facilisis sit amet</h6>
+          <h6 class="heading">VOLUNTEER</h6>
           <p>Curabitur sit amet elementum libero quis tincidunt erat mauris imperdiet sodales enim [&hellip;]</p>
-          <footer><a href="#">View Details &raquo;</a></footer>
         </article>
       </li>
       <li class="one_third">
         <article><a href="#"><i class="fa fa-expeditedssl"></i></a>
-          <h6 class="heading">Eros amet molestie</h6>
+          <h6 class="heading">DONOR</h6>
           <p>Eget auctor nisl aliquam at quisque posuere non mauris vitae aliquet aenean ex dolor [&hellip;]</p>
-          <footer><a href="#">View Details &raquo;</a></footer>
         </article>
       </li>
-      <li class="one_third first">
+      <!-- <li class="one_third first">
         <article><a href="#"><i class="fa fa-envira"></i></a>
           <h6 class="heading">Mollis dolor sed</h6>
           <p>Vehicula non accumsan ac consequat eu justo imperdiet lacus maecenas nibh sed erat [&hellip;]</p>
@@ -252,30 +229,24 @@ Licence URI: https://www.os-templates.com/template-terms
           <p>Egestas integer gravida nisl sed augue euismod iaculis nam et urna id purus egestas [&hellip;]</p>
           <footer><a href="#">View Details &raquo;</a></footer>
         </article>
-      </li>
+      </li> -->
     </ul>
-    <!-- ################################################################################################ -->
   </section>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/04.png');">
   <div class="hoc container testimonials clear">
-    <!-- ################################################################################################ -->
-    <article><img src="images/demo/100x100.png" alt="">
+    <article><img src="images/demo/100x100.png" style="width : 30%">
       <blockquote>Turpis egestas vestibulum diam est tempor id interdum nec lobortis sit amet neque quisque quis rhoncus dolor morbi tempor lectus fermentum elementum condimentum leo lacus.</blockquote>
       <h6 class="heading">A. Doe</h6>
       <em>Sit amet vitae nisi</em></article>
-    <!-- ################################################################################################ -->
   </div>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<!-- <div class="wrapper row3">
   <section class="hoc container clear">
-    <!-- ################################################################################################ -->
+
     <div class="sectiontitle">
       <h6 class="heading">Malesuada fames</h6>
       <p>Habitant morbi tristique senectus et netus et</p>
@@ -329,7 +300,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <footer><a href="#">Read More &raquo;</a></footer>
         </div>
       </article>
-    </div>
+    </div> -->
     <!-- ################################################################################################ -->
     <div class="clear"></div>
   </section>
@@ -337,18 +308,18 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/05.png');">
+<!-- <div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/05.png');">
   <figure class="hoc clear">
-    <!-- ################################################################################################ -->
+
     <ul class="nospace group logos">
       <li class="one_quarter first"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
     </ul>
-    <!-- ################################################################################################ -->
+
   </figure>
-</div>
+</div> -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

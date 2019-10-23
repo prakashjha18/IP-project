@@ -66,7 +66,7 @@ $donate=ngodonations($nid);
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="../index.html">Drywest</a></h1>
+      <h1><a href="index.php">Drywest</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
     <!-- ################################################################################################ -->
@@ -82,8 +82,11 @@ $donate=ngodonations($nid);
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a><li>
+        <li><a href="about.html">About Us</li>
         <li class="active"><a class="drop" href="#">Pages</a>
+
           <ul>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="full-width.html">Full Width</a></li>
@@ -218,7 +221,7 @@ $donate=ngodonations($nid);
                          <p class="bold1"><?php print_r($value[4]) ?></p>
 
                          <p class="bold2"><?php print_r($value[5]) ?></p>
-                         
+
                           <?php
                                if($value[7]==1){
                           ?>
