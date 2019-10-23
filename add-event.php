@@ -217,7 +217,8 @@ $donate=ngodonations($nid);
                 Location of Event : <input type="text" class="form-control" name="location" id="location"><br>
                 Description of Event : <textarea type="text" class="form-control" cols=10 rows=10 name="desc" id="desc"></textarea><br>
                 Limit of People : <input type="text" class="form-control" name="req_reg" id="req_reg"><br>
-                <button class="btn" s>ADD EVENT</button>
+                <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
+
 
 
 
@@ -357,47 +358,56 @@ $donate=ngodonations($nid);
 <script src="layout/toastr/toastr.min.js"></script>
 <script type="text/javascript">
 
-          $("form").submit(function(){
-          var form_data = $(this).closest("form");
-          $req_reg = form_data[0]["req_reg"].value;
-          $etitle = form_data[0]["name"].value;
-          $desc=form_data[0]["desc"].value;
-          $location=form_data[0]["location"].value;
-          // console.log("hello")
-          // console.log(form_data);
-          // var data = form_data.split("&");
-          // console.log(form_data[0]["evid"].value);
+            $("form").submit(function(){
 
-          //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
-          // console.log($eid);
-          $.ajax({
-              url: "pages/includes/saveevent.php",
-              method:"POST",
-              data:{req_reg:$req_reg,etitle:$etitle,desc:$desc, location:$location},
-              dataType:"json",
-              success:function(response){
-                if(response.done=="Event Added")
-                {
-                  // alert("You Have Succesfullty registered for this event");
-                    toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
-                    // $timeout(function() {
-                          // window.location='ngo.php'
-                      // }, 1000000);
+            var form_data = $(this).closest("form");
+            var req_reg = form_data[0]["req_reg"].value;
+            var etitle = form_data[0]["name"].value;
+            var desc=form_data[0]["desc"].value;
+            var location=form_data[0]["location"].value;
+            // console.log("hello")
+            // console.log(form_data);
+            // var data = form_data.split("&");
+            // console.log(form_data[0]["evid"].value);
+
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "pages/includes/saveevent.php",
+                type:"POST",
+                data:{req_reg:req_reg,etitle:etitle,desc:desc, location:location},
+                dataType:'json'
+                // success:function(response){
+                //   if(response.done=="Event Added")
+                //   {
+                //     // alert("You Have Succesfullty registered for this event");
+                //       toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+                //       // $timeout(function() {
+                //             // window.location='ngo.php'
+                //         // }, 1000000);
+                //
+                //
+                //   }
+                //
+                // },
+                // error: function (response) {
+                //     toastr["error"]("There was some error, try again later", "Events");
+                //     console.log(response.done);
+                //     // $timeout(function() {
+                //     //         window.location='ngo.php'
+                //     //     }, 1000000);
+                // }
 
 
-                }
-
-              },
-              error: function () {
-                  toastr["error"]("There was some error, try again later", "Events");
-                  // $timeout(function() {
-                  //         window.location='ngo.php'
-                  //     }, 1000000);
-              }
-
-
-          });
-      });
-      </script>
+            })
+            .done(function(data){
+              toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+            })
+            .fail(function(data){
+              toastr["error"]("There was some error, try again later", "Events");
+              console.log(data);
+            });
+        });
+        </script>
 </body>
 </html>

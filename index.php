@@ -55,40 +55,38 @@ Licence URI: https://www.os-templates.com/template-terms
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
-      <ul class="clear" style="margin-top : 0">
+      <ul class="clear">
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </div>
+  <!-- <div class="wrapper row2">
+    <nav id="mainav" class="hoc clear">
+
+      <ul class="clear">
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a><li>
         <li><a href="about.html">About Us</li>
 
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
-        <li><a href="#">              </a></li>
+
         <li><a href="#">              </a></li>
         <li><a href="#">              </a></li>
         <li><a href="#">LOGIN</a></li>
         <li><a href="register.php">REGISTER</a></li>
       </ul>
-      <!-- ################################################################################################ -->
+
     </nav>
-  </div>
+  </div> -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
-  <div class="wrapper">
-    <article id="pageintro" class="hoc clear" style="background-image:url('images/demo/backgrounds/01.png') background-size: 100%">
+  <div class="wrapper overlay">
+    <article id="pageintro" class="hoc clear" style="background-image:url('images/demo/backgrounds/0.png') background-size: 100%">
       <!-- ################################################################################################ -->
       <h3 class="heading">Our Mission</h3>
       <p>"LIGHTEN A LIFE WITH A RAY OF HOPE" <br> -Mahatma Gandhi
@@ -155,8 +153,8 @@ Licence URI: https://www.os-templates.com/template-terms
   <div class="hoc split clear">
     <section>
       <!-- ################################################################################################ -->
-      <h2 class="heading">Nulla ultrices fusce</h2>
-      <p class="btmspace-50">Purus dui dignissim vitae convallis et lacinia ultrices nunc mauris consequat faucibus leo at ornare aenean lorem ipsum convallis sed volutpat quis.</p>
+      <h2 class="heading">TAKE A TOUR</h2>
+      <p class="btmspace-50">Our website provides the best NGO's who are there to take care</p>
       <ul class="nospace group elements">
         <li>
           <article><a href="#"><i class="fa fa-wpexplorer"></i></a>

@@ -33,7 +33,7 @@ File: Layout CSS
 }
 .feedback {
   background-color : #E2E0E0;
-  border-style: outset;
+  border-style: out;
   border-color: black;
 }
 
