@@ -25,9 +25,9 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
       <li><i class="fa fa-phone"></i> +91 9987085332 </li>
       <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
-      <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
-      <li><a href="login.html" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-      <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+      <li><a href="index.php"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="login.php" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><a href="register.php" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>

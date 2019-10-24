@@ -26,7 +26,7 @@ $donations=getngodonations();
 ?>
 <html lang="">
 <head>
-<title>Drywest | Pages | Basic Grid</title>
+<title>SAARTHI</title>
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
 <meta charset="utf-8">
@@ -47,12 +47,12 @@ $donations=getngodonations();
 <div class="wrapper row0">
   <div id="topbar" class="hoc clear">
 
-    <ul>
+  <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
-      <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-      <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
-      <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-      <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><i class="fa fa-phone"></i> +91 9987085332 </li>
+      <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
+      <li><a href="index.php"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="login.php" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
       <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
 
@@ -60,11 +60,10 @@ $donations=getngodonations();
 </div>
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
-    <div id="logo" class="fl_left">
-        <h1><a href="../index.html">Drywest</a></h1>
+  <div id="logo" class="fl_left">
+      <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
-    <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
-
+    <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
   </header>
 </div>
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
@@ -72,10 +71,13 @@ $donations=getngodonations();
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
 
-      <ul class="clear">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html">profile</a></li>
-        <li><a href="../index.html">about</a></li>
+    <ul class="clear">
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+      </ul>
         <!-- <li class="active"><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="gallery.html">Gallery</a></li>
@@ -101,13 +103,7 @@ $donations=getngodonations();
         <!-- <li><a href="#">Link Text</a></li>
         <li><a href="#">Link Text</a></li>
         <li><a href="#">Link Text</a></li> -->
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>
-        <li><a href="../index.html"></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <li><a href="#">LOGOUT</a></li>
+        
       </ul>
 
     </nav>

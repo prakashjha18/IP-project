@@ -78,10 +78,10 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
-      <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-      <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
-      <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-      <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><i class="fa fa-phone"></i> +91 9987085332 </li>
+      <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
+      <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="login.html" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
       <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -94,9 +94,9 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.php">BE THE CHANGE</a></h1>
+      <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
-    <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
+    <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
     <!-- ################################################################################################ -->
   </header>
 </div>
