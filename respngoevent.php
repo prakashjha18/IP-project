@@ -270,7 +270,7 @@ $events=ngoevents($nid);
 
 
           <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
-            <p><span>Volunteers participated</span></p>
+            <p><span>Volunteers participated  :- </span></p>
             <?php
                       
                         $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
@@ -287,6 +287,7 @@ $events=ngoevents($nid);
                               <th>Phone</th>
                             </tr>
                         <?php
+                        if (mysqli_num_rows($ngo) > 0) {
                         while($row = mysqli_fetch_assoc($ngo)) {
                             
                           ?>
@@ -300,6 +301,11 @@ $events=ngoevents($nid);
                             
                         
                    <?php   }
+
+                        }
+                        else{
+                          echo "<b>no volunteers found</b>";
+                        }
                 ?>
                 </table>
             <p></p>
