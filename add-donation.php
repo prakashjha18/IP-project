@@ -207,7 +207,7 @@ $donate=ngodonations($nid);
             <!-- ################################################################################################ -->
             <div id="comments">
 
-              <h2>ADD EVENT</h2>
+              <h2>ADD Donation</h2>
               <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
 
                 Title : <input type="text" class="form-control" id="name" name="name"><br>
@@ -381,6 +381,7 @@ else {
   })
   .done(function(data){
     toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+    console.log(data);
     form_data[0]["amount"].value="";
     form_data[0]["name"].value="";
     form_data[0]["desc"].value="";
