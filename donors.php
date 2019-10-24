@@ -1,4 +1,50 @@
 <!DOCTYPE html>
+<?php
+  require_once("pages/includes/functions.php");
+  session_start();
+  // print_r($_SESSION);
+  if($_SESSION['did']==NULL)
+  {
+      header("Location: index.php");
+  }
+
+  // $donations=getngodonations();
+  // echo "<pre>";
+  // print_r($donations);
+
+
+        if (isset($_GET['pageno'])) {
+            $pageno = $_GET['pageno'];
+        } else {
+            $pageno = 1;
+        }
+        $no_of_records_per_page = 6;
+        $offset = ($pageno-1) * $no_of_records_per_page;
+
+        global $connection;
+        // Check connection
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            die();
+        }
+
+        $total_pages_sql = "SELECT COUNT(*) FROM donations";
+        $result = mysqli_query($connection,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+        $sql = "SELECT * FROM donations LIMIT $offset, $no_of_records_per_page";
+        $res_data = mysqli_query($connection,$sql);
+        while($row = mysqli_fetch_array($res_data)){
+
+            $donations[]=$row;
+
+        }
+         // echo "<pre>";
+         //    print_r($donations);
+
+
+  ?>
 <!--
 Template Name: Drywest
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
@@ -98,11 +144,135 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content">
-      <!-- ################################################################################################ -->
-      write everything here
-      <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first">
+        <div id="comments">
+
+            <ul>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total Volunteers</a><h1>
+                    <h1>826666<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total NGO's</a><h1>
+                    <h1>826666<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Donations Done</a><h1>
+                    <h1>95862<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new donations</a><h1>
+                    <h1>7264<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new Volunteers</a><h1>
+                    <h1>3294<h1>
+                </header>
+
+                </article>
+            </li>
+            </ul>
+
+        </div>
     </div>
+    <div class="content three_quarter">
+      <?php $img[0]='css/img/pic1.jpg';?>
+          <?php $img[1]='css/img/pic2.jpg';?>
+          <?php $img[2]='css/img/pic3.jpg';?>
+          <?php $img[3]='css/img/pic4.jpg';?>
+          <?php $img[4]='css/img/pic5.jpg';?>
+          <?php $img[5]='css/img/pic6.jpg';?>
+          <?php $img[6]='css/img/pic1.jpg';?>
+          <?php $img[7]='css/img/pic2.jpg';?>
+          <?php $img[8]='css/img/pic3.jpg';?>
+          <?php $img[9]='css/img/pic4.jpg';?>
+          <?php $i=0;?>
+
+      <section class=" clear">
+          <!-- ################################################################################################ -->
+
+          <div class="grid-container1">
+
+              <?php
+
+                 foreach ($donations as $value) {
+                   // print_r($value[2]);
+                   ?>
+                   <article class="grid-item1">
+                   <div class="first1">
+                       <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                       <img src="<?php echo $img[$i];?>" height="220" width="330">
+            <?php $i++;?>
+            <div class="bottom-container" style="height: 200px ">
+              <p class="bold1"><b><?php print_r($value[4]) ?></b></p>
+              <p class="bold2"><?php print_r($value[5]) ?></p>
+              <form action="javascript:void(0);">
+                <div class="form-group">
+                  <input type="hidden" name="dtitle" id="dnid" value="<?php echo $value[4] ?>">
+
+                  <input type="hidden" name="per" id="per"
+                  value="<?php
+                          $score=($value[2]/$value[1])*100;
+                          echo(round($score, 2))."%";
+                          ?>"
+                  >
+                  <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
+                  <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
+                  <span><button type="button" class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px;">Read More</button></span>
+                  <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
+                </div>
+
+              </form>
+
+
+
+
+          </div>
+                  </div>
+                  </article>
+                   <?php
+                 }
+
+                 ?>
+          </div>
+          <ul class="pagination" style="text-align: center;" >
+                <li><a href="?pageno=1">First</a></li>
+                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                  <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+                </li>
+                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                  <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+                </li>
+                <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+              </ul>
+                <div class="clearfix"></div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>

@@ -1,4 +1,45 @@
 <!DOCTYPE html>
+<?php
+require_once("pages/includes/functions.php");
+session_start();
+// print_r($_SESSION);
+if($_SESSION['vid']==NULL)
+{
+    header("Location: index.php");
+}
+
+
+// $events=getngoevents();
+// echo "<pre>";
+// print_r($events);
+  if (isset($_GET['pageno'])) {
+            $pageno = $_GET['pageno'];
+        } else {
+            $pageno = 1;
+        }
+        $no_of_records_per_page = 6;
+        $offset = ($pageno-1) * $no_of_records_per_page;
+
+        global $connection;
+        // Check connection
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            die();
+        }
+
+        $total_pages_sql = "SELECT COUNT(*) FROM ngoevents";
+        $result = mysqli_query($connection,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+        $sql = "SELECT * FROM ngoevents LIMIT $offset, $no_of_records_per_page";
+        $res_data = mysqli_query($connection,$sql);
+        while($row = mysqli_fetch_array($res_data)){
+
+            $events[]=$row;
+
+        }
+?>
 <!--
 Template Name: Drywest
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
@@ -98,11 +139,143 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content">
-      <!-- ################################################################################################ -->
-      write everything here
-      <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first">
+        <div id="comments">
+
+            <ul>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total Volunteers</a><h1>
+                    <h1>826666<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Total NGO's</a><h1>
+                    <h1>826666<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>Donations Done</a><h1>
+                    <h1>95862<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new donations</a><h1>
+                    <h1>7264<h1>
+                </header>
+
+                </article>
+            </li>
+            <li>
+                <article>
+                <header>
+                    <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                    <h1><a>new Volunteers</a><h1>
+                    <h1>3294<h1>
+                </header>
+
+                </article>
+            </li>
+            </ul>
+
+        </div>
     </div>
+    <div class="content three_quarter">
+
+      <section class=" clear">
+          <!-- ################################################################################################ -->
+
+          <div class="grid-container1">
+
+              <?php
+
+                 foreach ($events as $key => $value) {
+                   // print_r($value[2]);
+                   ?>
+                   <article class="grid-item1">
+                   <div class="first1">
+                       <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                      <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>
+
+                      <div class="txtwrap">
+
+                        <div class="bottom-container" style="height: 160px ">
+
+                     <p class="bold1"><?php print_r($value[2]) ?></p>
+
+                     <p class="bold2"><?php print_r($value[3]) ?></p>
+
+
+                      <span style="float:left;">
+                     <form action="javascript:void(0);"  >
+                      <input type="hidden" name="dtitle" id="dtitle" value="<?php echo $value[2] ?>">
+
+                      <input type="hidden" name="per" id="per"
+                      value="<?php
+                              $score=($value[6]/$value[5])*100;
+                              echo(round($score, 2))."%";
+                              ?>"
+                      >
+                      <input type="hidden" name="pled" id="pled" value="<?php echo $value[5] ?>">
+                      <input type="hidden" name="desc" id="desc" value="<?php echo $value[3] ?>">
+                        <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px">Read More</button></a></span>
+                      </form>
+                    </span>
+                    <span style="float:right;">
+                      <form action="javascript:void(0);" name="thisform" id="thisform">
+                        <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?>>
+                        <input type="hidden" name="vid" id="vid" value=<?php  echo $_SESSION['vid'] ?>></span>
+                        <button class="btn read-more mores" type="submit" style="margin-right: 10px;">Participate</button>
+                        </form>
+
+
+                     <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header" style=" height: 61px;">
+                              <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+                      </div>
+                  </div>
+                  </article>
+                   <?php
+                 }
+
+                 ?>
+          </div>
+          <ul class="pagination" style="text-align: center;" >
+                <li><a href="?pageno=1">First</a></li>
+                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                  <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+                </li>
+                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                  <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+                </li>
+                <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+              </ul>
+                <div class="clearfix"></div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
