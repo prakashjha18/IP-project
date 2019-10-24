@@ -27,18 +27,79 @@ $events=ngoevents($nid);
 <title>Drywest | Pages | Basic Grid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
+.items a {
+	display:block;
+	cursor:pointer;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	left: 0;
+	right:0;
+	top: 0;
+	bottom:0;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	background-color: #fefefe;
+	position:fixed;
+	top:20%;
+	bottom:20%;
+	left:0;
+	right:0;
+	margin:auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%; /* Could be more or less, depending on screen size */
+	display:none;
+	box-sizing:border-box;
+	z-index:100;
+	overflow:auto;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .container .demo{text-align:center;}
 .container .demo div{padding:8px 0;}
 .container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
 .container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
+
+
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+
 </style>
+
 </head>
 <body id="top">
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -198,6 +259,25 @@ $events=ngoevents($nid);
     <div class="content three_quarter">
 
       <section class=" clear">
+        <div id="myModal" class="modal">
+        <?php
+
+           foreach ($events as $key => $value) {
+             // print_r($value[2]);
+             ?>
+
+
+          <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
+            <p><span>Volunteers participated</span></p>
+            <?php
+                      $addusertoevent=getallvolunteersparticipated($value[2]);
+                ?>
+            <p><?php echo implode(" ",$addusertoevent) ?></p>
+          </div>
+
+
+      <?php } ?>
+      </div>
           <!-- ################################################################################################ -->
 
           <div class="grid-container1">
@@ -207,6 +287,14 @@ $events=ngoevents($nid);
                  foreach ($events as $key => $value) {
                    // print_r($value[2]);
                    ?>
+                   <div id="myModal" class="modal">
+
+                     <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
+                       <p><span>Audits and Standards</span></p>
+                       <p>Text 1</p>
+                     </div>
+
+                   </div>
                    <article class="grid-item1">
                    <div class="first1">
                        <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
@@ -227,12 +315,12 @@ $events=ngoevents($nid);
                                 if($value[7]==1){
                            ?>
 
-                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing event</label></a></span>
+                               <span><a href="#"><button data-bid="a<?php print_r($value[0]) ?>" class="myBtn btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing event</button></a></span>
                            <?php
                                }
                                else{
                            ?>
-                               <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful event</label></a></span>
+                               <span><a href="#"><button data-bid="a<?php print_r($value[0]) ?>" class="myBtn btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful event</button></a></span>
                            <?php
                                }
                            ?>
@@ -249,6 +337,7 @@ $events=ngoevents($nid);
           </div>
           <!-- ################################################################################################ -->
           <div class="clear"></div>
+
         </section>
 
 
@@ -343,8 +432,26 @@ $events=ngoevents($nid);
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
+<script>
+$(document).on('click','.myBtn',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal').hide();
+	$('.modal-content').hide();
+
+	$('#myModal').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+
+$("body" ).on( "click",".close", function() {
+  	$('#myModal').hide();
+	$('.modal-content').hide();
+});
+
+</script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+
+
 </body>
 </html>
