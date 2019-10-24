@@ -15,6 +15,8 @@ if($_SESSION['nid']==NULL)
 {
     header("Location: index.php");
 }
+require_once("pages/includes/constants.php");
+require_once("pages/includes/db.php");
 
 $events=ngoevents($nid);
 // echo "<pre>";
@@ -270,9 +272,37 @@ $events=ngoevents($nid);
           <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
             <p><span>Volunteers participated</span></p>
             <?php
-                      $addusertoevent=getallvolunteersparticipated($value[2]);
+                      
+                        $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
+                        if(!$connection){
+                            echo "Some issue in connecting ".mysqli_connect_error($connection);
+                        }
+                       $query = "SELECT users.* from ngoeventspartcpn
+                       INNER JOIN users ON ngoeventspartcpn.vid=users.uid where eid=$value[0]";
+                        $ngo=mysqli_query($connection,$query);?>
+                        <table id="table_th">
+                            <tr>
+                              <th>Volunteers Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                            </tr>
+                        <?php
+                        while($row = mysqli_fetch_assoc($ngo)) {
+                            
+                          ?>
+                          
+                            <tr>
+                              <td><?php  print_r($row["UNAME"]); ?></td>
+                              <td><?php print_r($row["U_EMAIL"]); ?></td>
+                              <td><?php print_r($row["U_PHONE"]); ?></td>
+                            </tr>
+                            
+                            
+                        
+                   <?php   }
                 ?>
-            <p><?php echo implode(" ",$addusertoevent) ?></p>
+                </table>
+            <p></p>
           </div>
 
 

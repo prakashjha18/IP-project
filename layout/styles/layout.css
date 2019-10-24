@@ -11,6 +11,28 @@ File: Layout CSS
 
 @import url("font-awesome.min.css");
 @import url("framework.css");
+#table_th {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_th td, #table_th th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table_th tr:nth-child(even){background-color: #f2f2f2;}
+
+#table_th tr:hover {background-color: #ddd;}
+
+#table_th th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #EA5616;
+  color: white;
+}
 
 .grid-container1 {
   display: grid;
