@@ -279,15 +279,15 @@ $donate=ngodonations($nid);
   <footer id="footer" class="hoc clear">
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h6 class="heading">Arcu accumsan id felis</h6>
+      <h6 class="heading">CONTACT US</h6>
       <ul class="nospace btmspace-30 linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          Street Name &amp; Number, Town, Postcode/Zip
+          Vill - Chhoto Udaipur, Post - Argoal, Dist - Purba Midnapore, Pin - 721456, West Bengal, India
           </address>
         </li>
-        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+        <li><i class="fa fa-phone"></i> +91 9987085332</li>
+        <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
       </ul>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -299,32 +299,32 @@ $donate=ngodonations($nid);
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="heading">Sodales facilisis nisi</h6>
+      <h6 class="heading">EVENTS</h6>
       <ul class="nospace linklist">
         <li>
           <article>
-            <h2 class="nospace font-x1"><a href="#">Curabitur a pharetra</a></h2>
+            <h2 class="nospace font-x1"><a href="#">Fundraising</a></h2>
             <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-            <p class="nospace">Quis quam in hendrerit elit donec hendrerit sollicitudin imperdiet curabitur [&hellip;]</p>
+            <p class="nospace">Founders Adrienne Monteath-Van Dok and Hayley Bolding set up Atma in 2007, after exploring first-hand the dearth of quality education services that left millions of children excluded from a relevant education. [&hellip;]</p>
           </article>
         </li>
         <li>
           <article>
-            <h2 class="nospace font-x1"><a href="#">Risus sit amet blandit</a></h2>
+            <h2 class="nospace font-x1"><a href="#">NGO meet</a></h2>
             <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
-            <p class="nospace">Ultricies aliquam nisi vitae pulvinar donec luctus ex ex eget ornare tortor [&hellip;]</p>
+            <p class="nospace">SAARTHI's mission became plain: support existing education NGOs, transforming them into sustainable and scalable organisations. By transforming high potentials into high impact organisations, Atma enables them to reach out to more children in need[&hellip;]</p>
           </article>
         </li>
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="heading">Justo duis vulputate</h6>
-      <p class="nospace btmspace-30">commodo non proin fermentum neque sapien phasellus molestie tincidunt.</p>
+      <h6 class="heading">Reach Out To Us</h6>
+      <p class="nospace btmspace-30">If you have any queries, post your name and email and we'll get in touch with you.</p>
       <form method="post" action="#">
         <fieldset>
           <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <input class="btmspace-15" type="text" value="" placeholder="Name" SAARTHI="Name">
+          <input class="btmspace-15" type="text" value="" placeholder="Email" SAARTHI="Email">
           <button type="submit" value="submit">Submit</button>
         </fieldset>
       </form>
@@ -332,17 +332,13 @@ $donate=ngodonations($nid);
     <!-- ################################################################################################ -->
   </footer>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <!-- ################################################################################################ -->
-  </div>
+  </footer>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
