@@ -16,6 +16,8 @@ if($_SESSION['nid']==NULL)
     header("Location: index.php");
 }
 
+require_once("pages/includes/constants.php");
+require_once("pages/includes/db.php");
 $donate=ngodonations($nid);
 // echo "<pre>";
 // print_r($events);
@@ -27,11 +29,57 @@ $donate=ngodonations($nid);
 <title>Drywest | Pages | Basic Grid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
-<style>
 
 
+.items a {
+	display:block;
+	cursor:pointer;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	left: 0;
+	right:0;
+	top: 0;
+	bottom:0;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	background-color: #fefefe;
+	position:fixed;
+	top:20%;
+	bottom:20%;
+	left:0;
+	right:0;
+	margin:auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%; /* Could be more or less, depending on screen size */
+	display:none;
+	box-sizing:border-box;
+	z-index:100;
+	overflow:auto;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 /* DEMO ONLY */
 .container .demo{text-align:center;}
 .container .demo div{padding:8px 0;}
@@ -202,7 +250,59 @@ $donate=ngodonations($nid);
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <div class="content three_quarter">
+    <div id="myModal" class="modal">
+        <?php
 
+           foreach ($donate as $key => $value) {
+             // print_r($value[2]);
+             ?>
+
+
+          <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
+            <p><span>donations done  :- </span></p>
+            <?php
+                      
+                        $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
+                        if(!$connection){
+                            echo "Some issue in connecting ".mysqli_connect_error($connection);
+                        }
+                       $query = "SELECT users.uname,users.u_email,donationtransaction.amount from donationtransaction
+                       INNER JOIN users ON donationtransaction.did=users.uid where dnid=$value[0]";
+                        $ngo=mysqli_query($connection,$query);?>
+                        <table id="table_th">
+                            <tr>
+                              <th>donors Name</th>
+                              <th>Email</th>
+                              <th>Amount</th>
+                            </tr>
+                        <?php
+                        if (mysqli_num_rows($ngo) > 0) {
+                        while($row = mysqli_fetch_assoc($ngo)) {
+                            
+                          ?>
+                          
+                            <tr>
+                              <td><?php  print_r($row["uname"]); ?></td>
+                              <td><?php print_r($row["u_email"]); ?></td>
+                              <td><?php print_r($row["amount"]); ?></td>
+                            </tr>
+                            
+                            
+                        
+                   <?php   }
+
+                        }
+                        else{
+                          echo "<b>no donations yet</b>";
+                        }
+                ?>
+                </table>
+            <p></p>
+          </div>
+
+
+      <?php } ?>
+      </div>
 
           <!-- ################################################################################################ -->
 
@@ -225,12 +325,12 @@ $donate=ngodonations($nid);
                           <?php
                                if($value[7]==1){
                           ?>
-                              <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing Donations</label></a></span>
+                              <span><a href="#"><button class="myBtn btn read-more"  data-bid="a<?php print_r($value[0]) ?>" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing Donations</button></a></span>
                           <?php
                               }
                               else{
                           ?>
-                              <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful Donation</label></a></span>
+                              <span><a href="#"><button class="myBtn btn read-more" data-bid="a<?php print_r($value[0]) ?>" onclick="getpart('<?php  echo ($value[4]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful Donation</button></a></span>
                           <?php
                               }
                           ?>
@@ -339,6 +439,22 @@ $donate=ngodonations($nid);
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
+<script>
+$(document).on('click','.myBtn',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal').hide();
+	$('.modal-content').hide();
+
+	$('#myModal').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+
+$("body" ).on( "click",".close", function() {
+  	$('#myModal').hide();
+	$('.modal-content').hide();
+});
+
+</script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
