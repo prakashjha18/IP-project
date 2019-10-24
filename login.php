@@ -9,7 +9,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>Drywest | Pages | Basic Grid</title>
+<title>SAARTHI</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -32,10 +32,10 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
-      <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-      <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
-      <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-      <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><i class="fa fa-phone"></i> +91 9987085332 </li>
+      <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
+      <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="login.html" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
       <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -45,12 +45,12 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
+  <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="../index.html">Drywest</a></h1>
+      <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
-    <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
+    <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
     <!-- ################################################################################################ -->
   </header>
 </div>
@@ -61,36 +61,14 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');"> 
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
-    <nav id="mainav" class="hoc clear"> 
+    <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Pages</a>
-          <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="full-width.html">Full Width</a></li>
-            <li><a href="sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="sidebar-right.html">Sidebar Right</a></li>
-            <li class="active"><a href="basic-grid.html">Basic Grid</a></li>
-          </ul>
-        </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
