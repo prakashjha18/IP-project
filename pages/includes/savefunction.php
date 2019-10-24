@@ -23,12 +23,13 @@ if(!$connection){
   	$nid=$_SESSION['nid'];
   	$dtitle=$_POST['name'];
   	$decs=$_POST['desc'];
-  	$query = "INSERT INTO donations (D_TITLE,DAMOUNT, NID, D_DESCRIPTION) VALUES ('$dtitle',$damt,$nid,'$decs')";
+  	$query = "INSERT INTO donations (D_TITLE,DAMOUNT,COLLECTED_AMT, NID, D_DESCRIPTION,STATUS_D,D_IMAGE) VALUES ('$dtitle',$damt,0,$nid,'$decs',2,0);";
     $resultset = mysqli_query($connection,$query);
     mysqli_close($connection);
       if($resultset!=0)
     	{
     		$result["done"] = true;
+        $result["success"]=true;
         	// convert the result array to json format
             echo json_encode($result);
             exit;

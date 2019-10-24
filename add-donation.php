@@ -67,7 +67,7 @@ $donate=ngodonations($nid);
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="../index.html">Drywest</a></h1>
+      <h1><a href="index.php">Drywest</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
     <!-- ################################################################################################ -->
@@ -83,7 +83,7 @@ $donate=ngodonations($nid);
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li class="active"><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="gallery.html">Gallery</a></li>
@@ -359,6 +359,12 @@ $("form").submit(function(){
   var damt = form_data[0]["amount"].value;
   var dtitle = form_data[0]["name"].value;
   var desc=form_data[0]["desc"].value;
+  console.log(damt);
+  console.log(dtitle);
+  console.log(desc);
+  if(damt == "" || dtitle == "" || desc == "")  {
+        toastr["error"]("Please fill all the fields");
+  }
   //console.log("aj")
   //console.log(form_data);
   // var data = form_data.split("&");
@@ -366,6 +372,7 @@ $("form").submit(function(){
 
   //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
   // console.log($eid);
+else {
   $.ajax({
       url: "pages/includes/savefunction.php",
       type:"POST",
@@ -374,11 +381,16 @@ $("form").submit(function(){
   })
   .done(function(data){
     toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+    form_data[0]["amount"].value="";
+    form_data[0]["name"].value="";
+    form_data[0]["desc"].value="";
+    console.log(data);
   })
   .fail(function(data){
     toastr["error"]("There was some error, try again later", "Events");
     console.log(data);
   });
+}
 });
         </script>
 </body>

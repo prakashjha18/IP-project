@@ -365,6 +365,9 @@ $donate=ngodonations($nid);
             var etitle = form_data[0]["name"].value;
             var desc=form_data[0]["desc"].value;
             var location=form_data[0]["location"].value;
+            if(req_reg == "" || etitle == "" || etitle == "" || desc == "" || location == "")   {
+              toastr["error"]("Please fill all the fields");
+            }
             // console.log("hello")
             // console.log(form_data);
             // var data = form_data.split("&");
@@ -372,42 +375,49 @@ $donate=ngodonations($nid);
 
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
-            $.ajax({
-                url: "pages/includes/saveevent.php",
-                type:"POST",
-                data:{req_reg:req_reg,etitle:etitle,desc:desc, location:location},
-                dataType:'json'
-                // success:function(response){
-                //   if(response.done=="Event Added")
-                //   {
-                //     // alert("You Have Succesfullty registered for this event");
-                //       toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
-                //       // $timeout(function() {
-                //             // window.location='ngo.php'
-                //         // }, 1000000);
-                //
-                //
-                //   }
-                //
-                // },
-                // error: function (response) {
-                //     toastr["error"]("There was some error, try again later", "Events");
-                //     console.log(response.done);
-                //     // $timeout(function() {
-                //     //         window.location='ngo.php'
-                //     //     }, 1000000);
-                // }
+            else {
+              $.ajax({
+                  url: "pages/includes/saveevent.php",
+                  type:"POST",
+                  data:{req_reg:req_reg,etitle:etitle,desc:desc, location:location},
+                  dataType:'json'
+                  // success:function(response){
+                  //   if(response.done=="Event Added")
+                  //   {
+                  //     // alert("You Have Succesfullty registered for this event");
+                  //       toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+                  //       // $timeout(function() {
+                  //             // window.location='ngo.php'
+                  //         // }, 1000000);
+                  //
+                  //
+                  //   }
+                  //
+                  // },
+                  // error: function (response) {
+                  //     toastr["error"]("There was some error, try again later", "Events");
+                  //     console.log(response.done);
+                  //     // $timeout(function() {
+                  //     //         window.location='ngo.php'
+                  //     //     }, 1000000);
+                  // }
 
 
-            })
-            .done(function(data){
-              toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
-            })
-            .fail(function(data){
-              toastr["error"]("There was some error, try again later", "Events");
-              console.log(data);
-            });
-        });
+              })
+              .done(function(data){
+                toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+                form_data[0]["req_reg"].value = "";
+                form_data[0]["name"].value = "";
+                desc=form_data[0]["desc"].value = "";
+                location=form_data[0]["location"].value = "";
+              })
+              .fail(function(data){
+                toastr["error"]("There was some error, try again later", "Events");
+                console.log(data);
+              });
+            }
+          });
+
         </script>
 </body>
 </html>
