@@ -1,135 +1,94 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
+.items a {
+	display:block;
+	cursor:pointer;
+}
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	left: 0;
+	right:0;
+	top: 0;
+	bottom:0;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content */
 .modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
+	background-color: #fefefe;
+	position:fixed;
+	top:20%;
+	bottom:20%;
+	left:0;
+	right:0;
+	margin:auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%; /* Could be more or less, depending on screen size */
+	display:none;
+	box-sizing:border-box;
+	z-index:100;
+	overflow:auto;
 }
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button */
 .close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #EA5616;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #EA5616;
-  color: white;
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 </style>
 </head>
+
 <body>
-
-<h2>Animated Modal with Header and Footer</h2>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
 <div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Modal Header</h2>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
+  <div class="modal-content" id="a1"> <span class="close">&#215;</span>
+    <p><span>Audits and Standards</span></p>
+    <p>Text 1</p>
   </div>
-
+  <div class="modal-content" id="a2"> <span class="close">&#215;</span>
+    <p><span>Standards</span></p>
+    <p>Text 2</p>
+  </div>
+  <div class="modal-content" id="a3"> <span class="close">&#215;</span>
+    <p><span>Thirtd item</span></p>
+    <p>Text 3</p>
+  </div>
 </div>
 
+	<button class="myBtn" data-bid="a1">Audits &amp; Standards</button> 
+	<button class="myBtn" data-bid="a2">Standards</button> 
+	<button class="myBtn" data-bid="a3">third item</button>
+
 <script>
-// Get the modal
-var modal = document.getElementById("myModal");
+$(document).on('click','.myBtn',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal').hide();
+	$('.modal-content').hide();
+	
+	$('#myModal').fadeIn();
+	$(myTargetModal).fadeIn();
+});
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+$("body" ).on( "click",".close", function() {
+  	$('#myModal').hide();
+	$('.modal-content').hide();
+});
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
-
 </body>
 </html>
