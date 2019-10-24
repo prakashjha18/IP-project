@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Template Name: Placeholder
+Template Name: SAARTHI
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
 Author URI: https://www.os-templates.com/
 Licence: Free to use under our free template licence terms
@@ -9,7 +9,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>Placeholder</title>
+<title>SAARTHI</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -23,11 +23,10 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
-      <li><i class="fa fa-phone"></i> +00 (123) 456 78900</li>
-      <li><i class="fa fa-envelope-o"></i> info@myngoss.com</li>
+      <li><i class="fa fa-phone"></i> +91 9987085332 </li>
+      <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
       <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
       <li><a href="login.html" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-      <li><a href="signup.html" title="Sign up"><i class="fa fa-lg fa-sign-up"></i></a></li>
       <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -40,7 +39,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1 ><a href="index.php">BE THE CHANGE</a></h1>
+      <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
     <!-- ################################################################################################ -->
@@ -91,7 +90,6 @@ Licence URI: https://www.os-templates.com/template-terms
       <h3 class="heading">Our Mission</h3>
       <p>"LIGHTEN A LIFE WITH A RAY OF HOPE" <br> -Mahatma Gandhi
       </p>
-      <footer><a class="btn" href="#">Eget risus aenean</a></footer>
       <!-- ################################################################################################ -->
     </article>
   </div>
@@ -112,34 +110,9 @@ Licence URI: https://www.os-templates.com/template-terms
         <p>We value the trust our volunteers and donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. So you can engage without the worry of your help being misused.</p>
         <p class="btmspace-30"> Our NGO through awareness programs for parents/ guardians is working for under privileged, BPL families as homeless families, Street children & youth for last 10 years. We firmly believe that working in collaboration with Government Machinery and all stake holders (like children, parents, NGOs, Remand homes, counselors, Trainers, employers etc.) will help reduce menace of child abuse, child labour and child exploitation. In order to promote</p>
       </div>
-      <!-- <div class="one_half">
-        <ul class="nospace group">
-          <li class="one_half first btmspace-50">
-            <article>
-              <h6 class="heading font-x1"><a href="#">Morbi neque nunc</a></h6>
-              <p class="nospace">Sit amet malesuada maecenas sit amet elementum nisi vel convallis nibh [&hellip;]</p>
-            </article>
-          </li>
-          <li class="one_half btmspace-50">
-            <article>
-              <h6 class="heading font-x1"><a href="#">Convallis non mattis</a></h6>
-              <p class="nospace">At tempus odio nec pretium dui nullam lectus enim fringilla eget urna euismod [&hellip;]</p>
-            </article>
-          </li>
-          <li class="one_half first">
-            <article>
-              <h6 class="heading font-x1"><a href="#">Et suscipit odio</a></h6>
-              <p class="nospace">Blandit pharetra erat nam congue tortor eget risus imperdiet cursus [&hellip;]</p>
-            </article>
-          </li>
-          <li class="one_half">
-            <article>
-              <h6 class="heading font-x1"><a href="#">Sed placerat a ante</a></h6>
-              <p class="nospace">Nullam vitae iaculis velit suspendisse pharetra lobortis diam id tempor [&hellip;]</p>
-            </article>
-          </li>
-        </ul>
-      </div> -->
+      <div class="one_half">
+        <img src="images/demo/36.jpg" alt="sorry brotha">
+      </div>
     </div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
@@ -158,15 +131,15 @@ Licence URI: https://www.os-templates.com/template-terms
       <ul class="nospace group elements">
         <li>
           <article><a href="#"><i class="fa fa-wpexplorer"></i></a>
-            <h6 class="heading">Habitasse platea dictumst</h6>
-            <p>Blandit tempor tortor quisque cursus ligula mi eu viverra lorem dapibus sit amet [&hellip;]</p>
+            <h6 class="heading">Smile Foundation</h6>
+            <p>Smile Foundation is a non-governmental organization based in New Delhi, India. It was established in 2002 and has a presence in 25 Indian states. The organisation works for the welfare of children, their families, and the community through four major programmes.[&hellip;]</p>
             <footer><a href="#">View Details &raquo;</a></footer>
           </article>
         </li>
         <li>
           <article><a href="#"><i class="fa fa-eye-slash"></i></a>
-            <h6 class="heading">Aliquam eu mi a lorem</h6>
-            <p>Fusce at dui eleifend risus lacinia hendrerit donec pretium id nulla non ornare [&hellip;]</p>
+            <h6 class="heading">Akanksha</h6>
+            <p>The Akanksha Foundation is a non-profit organisation with a mission to provide children from low-income communities with a high-quality education, enabling them to maximize their potential and transform their lives [&hellip;]</p>
             <footer><a href="#">View Details &raquo;</a></footer>
           </article>
         </li>
@@ -192,19 +165,19 @@ Licence URI: https://www.os-templates.com/template-terms
       <li class="one_third first">
         <article><a href="#"><i class="fa fa-plane"></i></a>
           <h6 class="heading">NGO</h6>
-          <p>Sed venenatis tempor massa nec consequat suspendisse congue sit amet elit ac fringilla [&hellip;]</p>
+          <p>Welcome to SAARTHI, India's largest and most trusted giving platform that connects donors to verified nonprofits. SAARTHI helps you become a ray of hope for people in need. Choose a cause that is close to your heart and join hands with millions of donors like you who aim to make this world a better place. [&hellip;]</p>
         </article>
       </li>
       <li class="one_third">
         <article><a href="#"><i class="fa fa-wheelchair-alt"></i></a>
           <h6 class="heading">VOLUNTEER</h6>
-          <p>Curabitur sit amet elementum libero quis tincidunt erat mauris imperdiet sodales enim [&hellip;]</p>
+          <p> SAARTHI offers a diverse range of volunteering opportunities. Through these, you can not only contribute towards the betterment of underprivileged children, but also undergo a transformational journey for yourselves! [&hellip;]</p>
         </article>
       </li>
       <li class="one_third">
         <article><a href="#"><i class="fa fa-expeditedssl"></i></a>
           <h6 class="heading">DONOR</h6>
-          <p>Eget auctor nisl aliquam at quisque posuere non mauris vitae aliquet aenean ex dolor [&hellip;]</p>
+          <p>A lot of work goes down at the grass root level in villages in the remotest corners as well as the most populous metros across India, with schools, individuals and government bodies. We need your contributions to keep coming in. [&hellip;]</p>
         </article>
       </li>
       <!-- <li class="one_third first">
@@ -234,9 +207,9 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/04.png');">
   <div class="hoc container testimonials clear">
     <article><img src="images/demo/100x100.png" style="width : 30%">
-      <blockquote>Turpis egestas vestibulum diam est tempor id interdum nec lobortis sit amet neque quisque quis rhoncus dolor morbi tempor lectus fermentum elementum condimentum leo lacus.</blockquote>
-      <h6 class="heading">A. Doe</h6>
-      <em>Sit amet vitae nisi</em></article>
+      <blockquote>Be the change is doing great work. I am happy to make whatever contribution I can. The Diwali greeting which I received last year from the child whom I was supporting brought tears to my eyes and once again highlighted the support that institutions like this need from us. So I would request all the capable citizens of our country to contribute for this noble cause.</blockquote>
+      <h6 class="heading">John A.</h6>
+      <em>VOLUNTEER</em></article>
   </div>
 </div>
 <!-- ################################################################################################ -->
@@ -325,15 +298,15 @@ Licence URI: https://www.os-templates.com/template-terms
   <footer id="footer" class="hoc clear">
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h6 class="heading">Arcu accumsan id felis</h6>
+      <h6 class="heading">CONTACT US</h6>
       <ul class="nospace btmspace-30 linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          Street Name &amp; Number, Town, Postcode/Zip
+          Vill - Chhoto Udaipur, Post - Argoal, Dist - Purba Midnapore, Pin - 721456, West Bengal, India
           </address>
         </li>
-        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+        <li><i class="fa fa-phone"></i> +91 9987085332</li>
+        <li><i class="fa fa-envelope-o"></i> info@saarthingo.com</li>
       </ul>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -345,32 +318,32 @@ Licence URI: https://www.os-templates.com/template-terms
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="heading">Sodales facilisis nisi</h6>
+      <h6 class="heading">EVENTS</h6>
       <ul class="nospace linklist">
         <li>
           <article>
-            <h2 class="nospace font-x1"><a href="#">Curabitur a pharetra</a></h2>
+            <h2 class="nospace font-x1"><a href="#">Fundraising</a></h2>
             <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-            <p class="nospace">Quis quam in hendrerit elit donec hendrerit sollicitudin imperdiet curabitur [&hellip;]</p>
+            <p class="nospace">Founders Adrienne Monteath-Van Dok and Hayley Bolding set up Atma in 2007, after exploring first-hand the dearth of quality education services that left millions of children excluded from a relevant education. [&hellip;]</p>
           </article>
         </li>
         <li>
           <article>
-            <h2 class="nospace font-x1"><a href="#">Risus sit amet blandit</a></h2>
+            <h2 class="nospace font-x1"><a href="#">NGO meet</a></h2>
             <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
-            <p class="nospace">Ultricies aliquam nisi vitae pulvinar donec luctus ex ex eget ornare tortor [&hellip;]</p>
+            <p class="nospace">SAARTHI's mission became plain: support existing education NGOs, transforming them into sustainable and scalable organisations. By transforming high potentials into high impact organisations, Atma enables them to reach out to more children in need[&hellip;]</p>
           </article>
         </li>
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="heading">Justo duis vulputate</h6>
-      <p class="nospace btmspace-30">commodo non proin fermentum neque sapien phasellus molestie tincidunt.</p>
+      <h6 class="heading">Reach Out To Us</h6>
+      <p class="nospace btmspace-30">If you have any queries, post your name and email and we'll get in touch with you.</p>
       <form method="post" action="#">
         <fieldset>
           <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <input class="btmspace-15" type="text" value="" placeholder="Name" SAARTHI="Name">
+          <input class="btmspace-15" type="text" value="" placeholder="Email" SAARTHI="Email">
           <button type="submit" value="submit">Submit</button>
         </fieldset>
       </form>
