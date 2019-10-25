@@ -69,10 +69,17 @@
     <p>Text 3</p>
   </div>
 </div>
-
+<div id="myModal1" class="modal">
+	<div class="modal-content" id="b1"> <span class="close">&#215;</span>
+	  <p><span>sdbjd and Standards</span></p>
+	  <p>Text 1</p>
+	</div>
+	
+  </div>
 	<button class="myBtn" data-bid="a1">Audits &amp; Standards</button>
 	<button class="myBtn" data-bid="a2">Standards</button>
 	<button class="myBtn" data-bid="a3">third item</button>
+	<button class="myBtn2" data-bid="b1">by item</button>
 
 <script>
 $(document).on('click','.myBtn',function(){
@@ -84,8 +91,18 @@ $(document).on('click','.myBtn',function(){
 	$(myTargetModal).fadeIn();
 });
 
+$(document).on('click','.myBtn2',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal1').hide();
+	$('.modal-content').hide();
+
+	$('#myModal1').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+
 $("body" ).on( "click",".close", function() {
-  	$('#myModal').hide();
+	  $('#myModal').hide();
+	  $('#myModal1').hide();
 	$('.modal-content').hide();
 });
 

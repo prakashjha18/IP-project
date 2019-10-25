@@ -251,7 +251,28 @@ items a {
 
       <section class=" clear">
           <!-- ################################################################################################ -->
-
+          <div id="myModal1" class="modal">
+          <?php
+            foreach ($donations as $value) {
+              // print_r($value[2]);
+            ?>
+              <div class="modal-content" id="b<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
+              <form action="javascript:void(0);">
+                        
+                          <label for="usr">Please Enter Amount to be Donated</label>
+                          <input type="text" class="form-control" iname="amnt" id="amnt" value="">
+                          <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
+                        
+                        <!--  Amount to be donated <input type="text" name="amnt" id="amnt" value=""> -->
+                    
+                    
+                    <button class="btn pay" type="submit" id="contribute" style="background:#fda401;color:white;">Contribute</button>
+              </form>
+              </div>
+            <?php
+            }
+            ?>
+          </div>
           <div class="grid-container1">
 
               <?php
@@ -279,7 +300,7 @@ items a {
                   <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
                   <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
                   <span><button type="button" data-bid="a1" class="myBtn btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px;">Read More</button></span>
-                  <button type="button" class="btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
+                  <button type="button" data-bid="b<?php print_r($value[0]) ?>" class="myBtn2 btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
                 </div>
               </form>
           </div>
@@ -399,6 +420,7 @@ items a {
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script>
+  
 $(document).on("click", ".myBtn", function () {
            var form = $(this).closest("form");
            var dtitle= form[0]["dtitle"].value;
@@ -423,12 +445,74 @@ $(document).on('click','.myBtn',function(){
 	$('#myModal').fadeIn();
 	$(myTargetModal).fadeIn();
 });
+
+$(document).on('click','.myBtn2',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal1').hide();
+	$('.modal-content').hide();
+
+	$('#myModal1').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+
 $("body" ).on( "click",".close", function() {
-  	$('#myModal').hide();
+    $('#myModal').hide();
+    $('#myModal1').hide();
 	$('.modal-content').hide();
 });
+$("form").submit(function(){
+  
+          var form_data = $(this).closest("form");
+          // console.log(form_data);
+          $dnid = form_data[0]["dnid"].value;
+          var dnid= form_data[0]["dnid"].value;
+          $amnt = form_data[0]["amnt"].value;
+          // console.log(form_data[0]["dnid"].value);
+          // document.write(dnid);
+          $('#myModal1').hide();
+          // $dnid = document.getElementById('dnid').value;
+      
+          // $amnt = document.getElementById('amnt').value;
+      
+          //var data = form_data.split("&");
+          // console.log(form_data[2]["amnt"].value);
+          console.log($amnt);
+          //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+          console.log($dnid);
+          $.ajax({
+            
+              // url: "http://localhost/be-the-change/getDonations.php",
+              url : "getDonations.php",
+              method:"POST",
+              data:{dnid:$dnid,amnt:$amnt},
+              dataType:"json",
+              success:function(response){
+                  // print_r(response);
+      
+                  if(response.done=="Amount Donated!")
+                  {
+                      toastr["success"]("YOU HAVE A SUCCCESFULLY DONATED");
+                  }else if(response.done==false){
+                      toastr["error"]("SOMETHING WENT WRONG1");
+                  }else{
+                      alert(response.done);
+                  }
+              
+              },
+              // error: function( jqXhr, textStatus, errorThrown ){
+              //     console.log( JSON.stringify(errorThrown) );
+              // }
+              error: function () {
+                  toastr["error"]("SOMETHING WENT WRONG1");
+              }  
+                  
+              
+          });
+      });
+
 </script>
-<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/toastr/toastr.min.js"></script>
+<script src="layout/scripts/jquery-3.3.1.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
