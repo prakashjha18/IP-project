@@ -13,7 +13,7 @@ if(!empty($_POST["email"]))
     $password=mysqli_real_escape_string($connection,$password);
 
     $query="SELECT * FROM users WHERE U_EMAIL = '$email' and PASSWORD = '$password'";
-    $resultset = mysql_query($query);
+    $resultset = mysqli_query($query);
     // print_r($query);
     // exit;
 
