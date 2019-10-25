@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
   require_once("pages/includes/functions.php");
+  require_once("pages/includes/constants.php");
+require_once("pages/includes/db.php");
   session_start();
   // print_r($_SESSION);
   if($_SESSION['did']==NULL)
@@ -247,6 +249,47 @@ items a {
     </div>
     
     <div class="content three_quarter">
+    <div id="myModal" class="modal">
+        <?php
+
+           foreach ($donations as  $value) {
+             // print_r($value[2]);
+             ?>
+
+
+          <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
+            <p><span>contribute  :- </span></p>
+
+            <form action="pages/includes/donationsdone.php" method="POST" id="donationsd" name="donationsd">
+          <div class="block clear">
+            <label for="name">Amount <span>*</span></label>
+            <input type="text" placeholder="amount" name="amount" required="">
+          </div>
+          <div class="block clear">
+            
+            <input type="email" placeholder="Email" name="email" required="">
+          </div>
+          
+          <!-- <div class="block clear">
+            <label for="comment">Your Comment</label>
+            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+          </div> -->
+          <div>
+            <input type="submit" name="submit" value="Submit Form">
+           
+          </div>
+        </form>
+                      
+                        
+                        
+                
+                </table>
+            <p></p>
+          </div>
+
+
+      <?php } ?>
+      </div>
       <?php $img[0]='css/img/pic1.jpg';?>
           <?php $img[1]='css/img/pic2.jpg';?>
           <?php $img[2]='css/img/pic3.jpg';?>
@@ -290,7 +333,7 @@ items a {
                   <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
                   <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
                   <span><button type="button" data-bid="a1" class="myBtn btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px;">Read More</button></span>
-                  <button type="button" class="btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
+                  <button type="button" data-bid="a<?php print_r($value[0]) ?>"  class="myBtn btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
                 </div>
 
               </form>
@@ -443,20 +486,20 @@ $(document).on("click", ".myBtn", function () {
            document.getElementById('per2').style.animation.to = per;
 
       });
-$(document).on('click','.myBtn',function(){
-	var myTargetModal = '#' + $(this).data('bid');
-	$('#myModal').hide();
-	$('.modal-content').hide();
+        $(document).on('click','.myBtn',function(){
+          var myTargetModal = '#' + $(this).data('bid');
+          $('#myModal').hide();
+          $('.modal-content').hide();
 
-	$('#myModal').fadeIn();
-	$(myTargetModal).fadeIn();
-});
+          $('#myModal').fadeIn();
+          $(myTargetModal).fadeIn();
+        });
 
-$("body" ).on( "click",".close", function() {
-  	$('#myModal').hide();
-	$('.modal-content').hide();
-});
-
+        $("body" ).on( "click",".close", function() {
+            $('#myModal').hide();
+          $('.modal-content').hide();
+        });
+        
 </script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
