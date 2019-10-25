@@ -156,8 +156,7 @@ items a {
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Register</a></li>
+        <li><a href="pages/includes/logout.php">Logout</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
@@ -168,7 +167,7 @@ items a {
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
-      
+
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -288,7 +287,7 @@ items a {
                       </form>
 
 
-                    
+
                  </div>
                       </div>
                   </div>
@@ -393,19 +392,19 @@ items a {
   <div class="modal-content" id="a1"> <span class="close">&#215;</span>
   <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5><br><br>
   <b>Progress Status</b><br>
-   <progress id="vol_progress" max="100"></progress>                       
+   <progress id="vol_progress" max="100"></progress>
   <div class="box1">
 
     <div class="box2" name="per2" id="per2"><span class="percent">
-      
+
 
     </span></div>
   </div>
     <p class="bold2" name="ple" id="ple"></p>
     <p class="bold2" name="desc2" id="desc2"></p>
-    
+
   </div>
-  
+
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -463,7 +462,7 @@ $("body" ).on( "click",".close", function() {
             var form_data = $(this).closest("form");
             $eid = form_data[0]["evid"].value;
             $vid = form_data[0]["vid"].value;
-            
+
             // var data = form_data.split("&");
 
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
@@ -483,15 +482,15 @@ $("body" ).on( "click",".close", function() {
                   }else{
                         toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                   }
-                  
+
                 },
                 error: function () {
                     toastr["error"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
-                }  
-                    
-                
+                }
+
+
             });
         });
-        </script> 
+        </script>
 </body>
 </html>
