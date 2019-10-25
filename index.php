@@ -49,7 +49,11 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
+<<<<<<< Updated upstream:index.php
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
+=======
+<div class="bgded" style="background-image:url('images/demo/backgrounds/041.png');"> 
+>>>>>>> Stashed changes:index.html
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
@@ -283,7 +287,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <figure class="hoc clear">
 
     <ul class="nospace group logos">
-      <li class="one_quarter first"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
+      <li class="one_quarter first"><a href="#"><img src="images/demo/2252x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
       <li class="one_quarter"><a href="#"><img src="images/demo/222x100.png" alt=""></a></li>
