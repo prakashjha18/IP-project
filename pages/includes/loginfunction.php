@@ -8,16 +8,17 @@ if(!empty($_POST["email"]))
     //echo "hello";
     $email=test_input($_POST['email']);
     $password=test_input($_POST['password']);
-    
+
     $email=mysqli_real_escape_string($connection,$email);
     $password=mysqli_real_escape_string($connection,$password);
-    
+
     $query="SELECT * FROM users WHERE U_EMAIL = '$email' and PASSWORD = '$password'";
+    $resultset = mysql_query($query);
     // print_r($query);
     // exit;
 
     $select_user_details = mysqli_query($connection,$query);
-    
+
 //    proceed if there is data returned otherwise there would be errors
 
     checkQueryResult($select_user_details);
@@ -37,7 +38,7 @@ if(!empty($_POST["email"]))
         $role = $row['U_TYPE'];
         $phone = $row['U_PHONE'];
 //        print_r($role);
-        
+
         //session variable according to role
         if($role==1)
         {
@@ -55,7 +56,7 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = $uid;
             $_SESSION['nid'] = NULL;
             $_SESSION['uname'] = $uname;
-           
+
             header("Location: ../../volunteers.php");
         }
         elseif($role==3){

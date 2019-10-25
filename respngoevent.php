@@ -142,34 +142,10 @@ $events=ngoevents($nid);
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Pages</a>
-          <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="full-width.html">Full Width</a></li>
-            <li><a href="sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="sidebar-right.html">Sidebar Right</a></li>
-            <li class="active"><a href="basic-grid.html">Basic Grid</a></li>
-          </ul>
-        </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
-      </ul>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="pages/includes/logout.php">Logout</a></li>
       <!-- ################################################################################################ -->
     </nav>
   </div>
@@ -179,7 +155,7 @@ $events=ngoevents($nid);
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
-      
+
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -267,7 +243,7 @@ $events=ngoevents($nid);
           <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
             <p><span>Volunteers participated  :- </span></p>
             <?php
-                      
+
                         $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
                         if(!$connection){
                             echo "Some issue in connecting ".mysqli_connect_error($connection);
@@ -284,17 +260,17 @@ $events=ngoevents($nid);
                         <?php
                         if (mysqli_num_rows($ngo) > 0) {
                         while($row = mysqli_fetch_assoc($ngo)) {
-                            
+
                           ?>
-                          
+
                             <tr>
                               <td><?php  print_r($row["UNAME"]); ?></td>
                               <td><?php print_r($row["U_EMAIL"]); ?></td>
                               <td><?php print_r($row["U_PHONE"]); ?></td>
                             </tr>
-                            
-                            
-                        
+
+
+
                    <?php   }
 
                         }

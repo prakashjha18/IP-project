@@ -18,7 +18,7 @@
           <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
           <link rel="stylesheet" href="layout/datatables/datatables.min.css">
           <link rel="stylesheet" href="layout/datatables/plugins/bootstrap/datatables.bootstrap.css">-->
-          <link rel="stylesheet" href="header.css"> 
+          <link rel="stylesheet" href="header.css">
           <style>
 #table_t {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -47,14 +47,14 @@
       <body>
           <div class="topnav" id="myTopnav">
     <span class="logo">DASHBOARD</span>
-    
+
     <a href="pages/includes/logout.php" class="pull-right">Logout</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-   
+
     <div class="sidenav">
     <div class="top-wala">
       <!-- <img src="css/img/black-logo.png" height="150px"; width="200px";> -->
@@ -67,12 +67,12 @@
   <!-- <table class="table table-striped table-hover table-bordered" style="margin-top:50px;margin-left:200px;">
       <thead>
           <tr>
-              
+
               <th style="width:150px;">VOLUNTEER NAME</th>
               <th style="width:150px;">VOLUNTEER PHONE</th>
               <th style="width:200px;">Delete </th>
-              
-              
+
+
           </tr>
       </thead>
 
@@ -97,10 +97,10 @@
           <td><i class="fa fa-trash" aria-hidden="true"></i></td> -->
         </tr>
           <?php
-    } 
+    }
     ?>
 
-</table> 
+</table>
 
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">open</span>
@@ -119,8 +119,8 @@ function myFunction() {
         x.className = "topnav";
     }
 }
-       
-        
+
+
     </script>
-    
+
 </html>

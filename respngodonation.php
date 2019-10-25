@@ -130,37 +130,12 @@ $donate=ngodonations($nid);
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="collaboration.html">Collaborations</a><li>
-        <li><a href="about.html">About Us</li>
-        <li class="active"><a class="drop" href="#">Pages</a>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="collaboration.html">Collaborations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="pages/includes/logout.php">Logout</a></li>
 
-          <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="full-width.html">Full Width</a></li>
-            <li><a href="sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="sidebar-right.html">Sidebar Right</a></li>
-            <li class="active"><a href="basic-grid.html">Basic Grid</a></li>
-          </ul>
-        </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
-      </ul>
+
       <!-- ################################################################################################ -->
     </nav>
   </div>
@@ -170,7 +145,7 @@ $donate=ngodonations($nid);
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
-     
+
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -256,7 +231,7 @@ $donate=ngodonations($nid);
           <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
             <p><span>donations done  :- </span></p>
             <?php
-                      
+
                         $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
                         if(!$connection){
                             echo "Some issue in connecting ".mysqli_connect_error($connection);
@@ -273,17 +248,17 @@ $donate=ngodonations($nid);
                         <?php
                         if (mysqli_num_rows($ngo) > 0) {
                         while($row = mysqli_fetch_assoc($ngo)) {
-                            
+
                           ?>
-                          
+
                             <tr>
                               <td><?php  print_r($row["uname"]); ?></td>
                               <td><?php print_r($row["u_email"]); ?></td>
                               <td><?php print_r($row["amount"]); ?></td>
                             </tr>
-                            
-                            
-                        
+
+
+
                    <?php   }
 
                         }
@@ -306,12 +281,13 @@ $donate=ngodonations($nid);
                 foreach ($donate as $key => $value) {
                   // print_r($value[2]);
                   ?>
-                  <div class="grid-item1">
+                  <article class="grid-item1">
+                    <div class="first1">
+
                       <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
                      <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>  -->
                       <img src="css/img/pic5.jpg" height="10px" width="10px">
 
-                      <div class="txtwrap">
 
                          <p class="bold1"><?php print_r($value[4]) ?></p>
 
@@ -329,9 +305,8 @@ $donate=ngodonations($nid);
                           <?php
                               }
                           ?>
-                        </div>
-
-                 </div>
+                  </div>
+                 </article>
                   <?php
                 }
                 ?>

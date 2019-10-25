@@ -113,8 +113,7 @@ Licence URI: https://www.os-templates.com/template-terms
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Register</a></li>
+        <li><a href="pages/includes/logout.php">Logout</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
@@ -124,6 +123,11 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">DONORS PROFILE</a></li><BR><BR>
+      </ul>
+      <h5>Welcome</h5>
       <!-- ################################################################################################ -->
 
       <!-- ################################################################################################ -->
