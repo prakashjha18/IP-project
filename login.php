@@ -28,7 +28,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
+  <div id="topbar" class="hoc clear">
     <!-- ################################################################################################ -->
     <ul>
       <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
@@ -58,7 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
@@ -77,9 +77,9 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div class="wrapper overlay">
-    <div id="breadcrumb" class="hoc clear"> 
+    <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
-      
+
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -90,34 +90,36 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content"> 
+    <div class="content">
       <!-- ################################################################################################ -->
       <div id="comments">
-        
-        <h2>LOGIN</h2>
+        <div style="background-color : #ECECEC;padding : 1% ;border; border-radius : 10px; width : 50%; margin-left : 26%" >
+        <h2 style="text-align : center; font-size : 200%">LOGIN</h2>
+        <hr>
         <form action="pages/includes/loginfunction.php" method="POST">
           <div class="block clear">
-            <label for="name">EMAIL <span>*</span></label>
-            <input type="email" placeholder="Email" name="email" required>
+            <label for="name" >EMAIL <span>*</span></label>
+            <input type="email" placeholder="Email" name="email" required >
           </div>
           <div class="block clear">
-            <label for="email">PASSWORD <span>*</span></label>
+            <label for="email" >PASSWORD <span>*</span></label>
             <input type="password" placeholder="Password" name="password" required><br>
           </div>
-          
+
           <!-- <div class="block clear">
             <label for="comment">Your Comment</label>
             <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
           </div> -->
           <div>
-            <input type="submit" name="submit" value="Submit Form">
-           
+            <input type="submit" name="submit" value="Login">
+
           </div>
         </form>
       </div>
+    </div>
       <!-- ################################################################################################ -->
     </div>
     <!-- ################################################################################################ -->
