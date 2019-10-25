@@ -49,11 +49,9 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<<<<<<< Updated upstream:index.php
+
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
-=======
-<div class="bgded" style="background-image:url('images/demo/backgrounds/041.png');"> 
->>>>>>> Stashed changes:index.html
+
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <nav id="mainav" class="hoc clear">
