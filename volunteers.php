@@ -53,6 +53,11 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>SAARTHI</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+<link rel="stylesheet" href="layout/toastr/toastr.min.css">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
@@ -61,6 +66,49 @@ Licence URI: https://www.os-templates.com/template-terms
 .container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
 .container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
+items a {
+	display:block;
+	cursor:pointer;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	left: 0;
+	right:0;
+	top: 0;
+	bottom:0;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	background-color: #fefefe;
+	position:fixed;
+	top:20%;
+	bottom:20%;
+	left:0;
+	right:0;
+	margin:auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%; /* Could be more or less, depending on screen size */
+	display:none;
+	box-sizing:border-box;
+	z-index:100;
+	overflow:auto;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 /* DEMO ONLY */
 </style>
 </head>
@@ -224,32 +272,23 @@ Licence URI: https://www.os-templates.com/template-terms
                       <input type="hidden" name="per" id="per"
                       value="<?php
                               $score=($value[6]/$value[5])*100;
-                              echo(round($score, 2))."%";
+                              echo(round($score, 2));
                               ?>"
                       >
                       <input type="hidden" name="pled" id="pled" value="<?php echo $value[5] ?>">
                       <input type="hidden" name="desc" id="desc" value="<?php echo $value[3] ?>">
-                        <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px">Read More</button></a></span>
+                        <span><a href="#"><button data-bid="a1" class="myBtn btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px">Read More</button></a></span>
                       </form>
                     </span>
-                    <span style="float:right;">
+                  <span style="float:right;">
                       <form action="javascript:void(0);" name="thisform" id="thisform">
                         <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?>>
                         <input type="hidden" name="vid" id="vid" value=<?php  echo $_SESSION['vid'] ?>></span>
                         <button class="btn read-more mores" type="submit" style="margin-right: 10px;">Participate</button>
-                        </form>
+                      </form>
 
 
-                     <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header" style=" height: 61px;">
-                              <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    
                  </div>
                       </div>
                   </div>
@@ -350,13 +389,109 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </div>
 </div>
+<div id="myModal" class="modal">
+  <div class="modal-content" id="a1"> <span class="close">&#215;</span>
+  <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5><br><br>
+  <b>Progress Status</b><br>
+   <progress id="vol_progress" max="100"></progress>                       
+  <div class="box1">
+
+    <div class="box2" name="per2" id="per2"><span class="percent">
+      
+
+    </span></div>
+  </div>
+    <p class="bold2" name="ple" id="ple"></p>
+    <p class="bold2" name="desc2" id="desc2"></p>
+    
+  </div>
+  
+</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
+<script>
+$(document).on('click','.myBtn',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal').hide();
+	$('.modal-content').hide();
+
+	$('#myModal').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+
+$("body" ).on( "click",".close", function() {
+  	$('#myModal').hide();
+	$('.modal-content').hide();
+});
+
+</script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/toastr/toastr.min.js"></script>
+<script type="text/javascript">
+           $(document).on("click", ".myBtn", function () {
+           var form = $(this).closest("form");
+           // console.log("h");
+           var dtitle= form[0]["dtitle"].value;
+           // console.log(dtitle);
+           var desc= form[0]["desc"].value;
+           // console.log(desc);
+           var per= form[0]["per"].value;
+           // console.log(per);
+           var ple= form[0]["pled"].value;
+            console.log(dtitle);
+            console.log(desc);
+            console.log(per);
+            console.log(ple);
+           // console.log(dtitle);
+           $("#dtitle2").html(dtitle);
+           $("#desc2").html(desc);
+           $("#ple").html("Pledge Volunteer - "+ple);
+           $("#per2").html(per+"%");
+           document.getElementById('per2').style.width = per;
+           document.getElementById('vol_progress').value = per;
+           document.getElementById('per2').style.animation.to = per;
+
+      });
+            $("form#thisform").submit(function(){
+            console.log("g");
+
+            var form_data = $(this).closest("form");
+            $eid = form_data[0]["evid"].value;
+            $vid = form_data[0]["vid"].value;
+            
+            // var data = form_data.split("&");
+
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "getResults.php",
+                method:"POST",
+                data:{eid:$eid,vid:$vid},
+                dataType:"json",
+                success:function(response){
+                  if(response.done==true)
+                  {
+                    //alert("You Have Succesfullty registered for this event");
+                      toastr["success"]("YOU HAVE SUCCCESFULLY REGISTERED FOR THE EVENT", "PARTICIPANTS");
+                  }else if(response.done==false){
+                        toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
+                  }else{
+                        toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
+                  }
+                  
+                },
+                error: function () {
+                    toastr["error"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
+                }  
+                    
+                
+            });
+        });
+        </script> 
 </body>
 </html>
