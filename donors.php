@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <?php
   require_once("pages/includes/functions.php");
-  require_once("pages/includes/constants.php");
-require_once("pages/includes/db.php");
   session_start();
   // print_r($_SESSION);
   if($_SESSION['did']==NULL)
   {
       header("Location: index.php");
   }
-
   // $donations=getngodonations();
   // echo "<pre>";
   // print_r($donations);
-
-
         if (isset($_GET['pageno'])) {
             $pageno = $_GET['pageno'];
         } else {
@@ -22,30 +17,23 @@ require_once("pages/includes/db.php");
         }
         $no_of_records_per_page = 6;
         $offset = ($pageno-1) * $no_of_records_per_page;
-
         global $connection;
         // Check connection
         if (mysqli_connect_errno()){
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
             die();
         }
-
         $total_pages_sql = "SELECT COUNT(*) FROM donations";
         $result = mysqli_query($connection,$total_pages_sql);
         $total_rows = mysqli_fetch_array($result)[0];
         $total_pages = ceil($total_rows / $no_of_records_per_page);
-
         $sql = "SELECT * FROM donations LIMIT $offset, $no_of_records_per_page";
         $res_data = mysqli_query($connection,$sql);
         while($row = mysqli_fetch_array($res_data)){
-
             $donations[]=$row;
-
         }
          // echo "<pre>";
          //    print_r($donations);
-
-
   ?>
 <!--
 Template Name: Drywest
@@ -163,7 +151,8 @@ items a {
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="pages/includes/logout.php">Logout</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
@@ -173,11 +162,6 @@ items a {
   <!-- ################################################################################################ -->
   <div class="wrapper overlay">
     <div id="breadcrumb" class="hoc clear">
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">DONORS PROFILE</a></li><BR><BR>
-      </ul>
-      <h5>Welcome</h5>
       <!-- ################################################################################################ -->
 
       <!-- ################################################################################################ -->
@@ -253,47 +237,6 @@ items a {
     </div>
     
     <div class="content three_quarter">
-    <div id="myModalq" class="modal">
-        <?php
-
-           foreach ($donations as  $value) {
-             // print_r($value[2]);
-             ?>
-
-
-          <div class="modal-content" id="a<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
-            <p><span>contribute  :- </span></p>
-
-            <form action="pages/includes/donationsdone.php" method="POST" id="donationsd" name="donationsd">
-          <div class="block clear">
-            <label for="name">Amount <span>*</span></label>
-            <input type="text" placeholder="amount" name="amount" required="">
-          </div>
-          <div class="block clear">
-            
-            <input type="email" placeholder="Email" name="email" required="">
-          </div>
-          
-          <!-- <div class="block clear">
-            <label for="comment">Your Comment</label>
-            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
-          </div> -->
-          <div>
-            <input type="submit" name="submit" value="Submit Form">
-           
-          </div>
-        </form>
-                      
-                        
-                        
-                
-                </table>
-            <p></p>
-          </div>
-
-
-      <?php } ?>
-      </div>
       <?php $img[0]='css/img/pic1.jpg';?>
           <?php $img[1]='css/img/pic2.jpg';?>
           <?php $img[2]='css/img/pic3.jpg';?>
@@ -312,7 +255,6 @@ items a {
           <div class="grid-container1">
 
               <?php
-
                  foreach ($donations as $value) {
                    // print_r($value[2]);
                    ?>
@@ -337,20 +279,14 @@ items a {
                   <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
                   <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
                   <span><button type="button" data-bid="a1" class="myBtn btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px;">Read More</button></span>
-                  <button type="button" data-bid="a<?php print_r($value[0]) ?>"  class="myBtnq btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
+                  <button type="button" class="btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
                 </div>
-
               </form>
-
-
-
-
           </div>
                   </div>
                   </article>
                    <?php
                  }
-
                  ?>
           </div>
           <ul class="pagination" style="text-align: center;" >
@@ -372,7 +308,6 @@ items a {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -453,23 +388,17 @@ items a {
   <b>Progress Status</b><br>
    <progress id="vol_progress" max="100"></progress>
   <div class="box1">
-
     <div class="box2" name="per2" id="per2"><span class="percent">
-
-
     </span></div>
   </div>
     <p class="bold2" name="ple" id="ple"></p>
     <p class="bold2" name="desc2" id="desc2"></p>
-
   </div>
-
 </div>
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script>
-
 $(document).on("click", ".myBtn", function () {
            var form = $(this).closest("form");
            var dtitle= form[0]["dtitle"].value;
@@ -477,9 +406,7 @@ $(document).on("click", ".myBtn", function () {
            // console.log(desc);
            var per= form[0]["per"].value;
            var ple= form[0]["pled"].value;
-
-            console.log(per);
-
+           // console.log(per);
            document.getElementById('vol_progress').value = per;
            // console.log(dtitle);
            $("#dtitle").html(dtitle);
@@ -488,22 +415,18 @@ $(document).on("click", ".myBtn", function () {
            $("#per2").html(per+"%");
            document.getElementById('per2').style.width = per;
            document.getElementById('per2').style.animation.to = per;
-
       });
-        $(document).on('click','.myBtn',function(){
-          var myTargetModal = '#' + $(this).data('bid');
-          $('#myModal').hide();
-          $('.modal-content').hide();
-
-          $('#myModal').fadeIn();
-          $(myTargetModal).fadeIn();
-        });
-
-        $("body" ).on( "click",".close", function() {
-            $('#myModal').hide();
-          $('.modal-content').hide();
-        });
-        
+$(document).on('click','.myBtn',function(){
+	var myTargetModal = '#' + $(this).data('bid');
+	$('#myModal').hide();
+	$('.modal-content').hide();
+	$('#myModal').fadeIn();
+	$(myTargetModal).fadeIn();
+});
+$("body" ).on( "click",".close", function() {
+  	$('#myModal').hide();
+	$('.modal-content').hide();
+});
 </script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
