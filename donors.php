@@ -253,7 +253,7 @@ items a {
     </div>
     
     <div class="content three_quarter">
-    <div id="myModal" class="modal">
+    <div id="myModalq" class="modal">
         <?php
 
            foreach ($donations as  $value) {
@@ -337,7 +337,7 @@ items a {
                   <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
                   <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
                   <span><button type="button" data-bid="a1" class="myBtn btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit" style="margin-left : 10px;">Read More</button></span>
-                  <button type="button" data-bid="a<?php print_r($value[0]) ?>"  class="myBtn btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
+                  <button type="button" data-bid="a<?php print_r($value[0]) ?>"  class="myBtnq btn read-more mores"  <?php  echo ($value[0]) ?>"style="margin-left : 70px">Donate</button>
                 </div>
 
               </form>
@@ -478,7 +478,7 @@ $(document).on("click", ".myBtn", function () {
            var per= form[0]["per"].value;
            var ple= form[0]["pled"].value;
 
-           // console.log(per);
+            console.log(per);
 
            document.getElementById('vol_progress').value = per;
            // console.log(dtitle);
