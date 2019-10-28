@@ -1,3 +1,5 @@
+
+
 <?php
 // echo "hello";
 require_once("db.php");
@@ -12,8 +14,13 @@ if(!empty($_POST["email"]))
     $email=mysqli_real_escape_string($connection,$email);
     $password=mysqli_real_escape_string($connection,$password);
 
-    $query="SELECT * FROM users WHERE U_EMAIL = '$email' and PASSWORD = '$password'";
-    $resultset = mysqli_query($query);
+
+    $query = "SELECT * FROM users WHERE U_EMAIL = '$email' and PASSWORD = '$password'";
+    $result_can = mysqli_query($connection, $query);
+
+    
+
+
     // print_r($query);
     // exit;
 
@@ -78,14 +85,14 @@ if(!empty($_POST["email"]))
             $_SESSION['uname'] = $uname;
             header("Location: ../../header.php");
         }
+    }else {
+      $message = "Please enter correct details";
+      echo "<script type = 'text/javascript'> window.location.href='../../login.php'; alert('$message');</script>";
+      //header("Location: ../../login.php");
     }
 
 }
-else
-{
-    $db_password="";
-   header("Location: ../../login.php");
-}
+
 
 function test_input($data) {
   $data = trim($data);

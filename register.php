@@ -6,6 +6,7 @@ Author URI: https://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
+
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
@@ -64,10 +65,11 @@ Licence URI: https://www.os-templates.com/template-terms
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="login.php">Login</a></li>
+        <li class="active"><a href="register.php">Register</a></li>
 
       </ul>
       <!-- ################################################################################################ -->

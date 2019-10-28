@@ -64,10 +64,10 @@ Licence URI: https://www.os-templates.com/template-terms
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="login.php">Login</a></li>
+        <li class="active"><a href="login.php">Login</a></li>
         <li><a href="register.php">Register</a></li>
       </ul>
       <!-- ################################################################################################ -->
@@ -203,5 +203,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+
 </body>
 </html>
