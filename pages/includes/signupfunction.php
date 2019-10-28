@@ -33,12 +33,15 @@ require_once("functions.php");
     if($_POST['category_id']=='NGO')
     {
         $u_type=3;
+        $type = 'NGO';
     }elseif($_POST['category_id']=='Donor')
     {
         $u_type=1;
+        $type = 'Donor';
     }else
     {
         $u_type=2;
+        $type = 'Volunteer';
     }
 
     $query = "SELECT * FROM users WHERE U_EMAIL = '$u_email'";
@@ -54,7 +57,8 @@ require_once("functions.php");
     $stmt->execute();
     $stmt->close();
     $_SESSION["phone_number"] = $u_phone;
-    header("Location: ../../login.php");
+    echo "<script tpye = 'text/javascript'> window.location.href='../../login.php'; alert('You have successfully registered as a $type');</script>";
+  
     exit();
   }
 
