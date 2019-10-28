@@ -67,7 +67,7 @@ $donate=ngodonations($nid);
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="../index.html">Drywest</a></h1>
+      <h1><a href="../index.html">SAARTHI</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
     <!-- ################################################################################################ -->
@@ -97,11 +97,10 @@ $donate=ngodonations($nid);
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">NGO PROFILE</a></li><BR><BR>
       </ul>
+      <h5>ADD EVENT</h5>
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -183,8 +182,9 @@ $donate=ngodonations($nid);
           <div class="content">
             <!-- ################################################################################################ -->
             <div id="comments">
-
-              <h2>ADD EVENT</h2>
+              <div style="background-color : #ECECEC;padding : 1% ;border; border-radius : 10px; width : 90%; margin-left : 5%; height : 610px">
+              <h2 style="text-align : center; font-size : 200%">ADD EVENT</h2>
+              <hr>
               <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
 
                 Name of Event : <input type="text" class="form-control" name="name" id="name"><br>
@@ -194,6 +194,7 @@ $donate=ngodonations($nid);
                 Description of Event : <textarea type="text" class="form-control" cols=10 rows=10 name="desc" id="desc"></textarea><br>
                 Limit of People : <input type="text" class="form-control" name="req_reg" id="req_reg"><br>
                 <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
+              </div>
 
 
 

@@ -67,7 +67,7 @@ $donate=ngodonations($nid);
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.php">Drywest</a></h1>
+      <h1><a href="index.php">SAARTHI</a></h1>
     </div>
     <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
     <!-- ################################################################################################ -->
@@ -97,11 +97,10 @@ $donate=ngodonations($nid);
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">NGO PROFILE</a></li><BR><BR>
       </ul>
+      <h5>ADD DONATION</h5>
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -183,7 +182,9 @@ $donate=ngodonations($nid);
             <!-- ################################################################################################ -->
             <div id="comments">
 
-              <h2>ADD Donation</h2>
+              <div style="background-color : #ECECEC;padding : 1% ;border; border-radius : 10px; width : 90%; margin-left : 5%; height : 440px; margin-top : 5%">
+              <h2 style="text-align : center; font-size : 200%">ADD DONATION</h2>
+              <hr>
               <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
 
                 Title : <input type="text" class="form-control" id="name" name="name"><br>
@@ -192,7 +193,7 @@ $donate=ngodonations($nid);
                 Description of Donation : <textarea type="text" class="form-control"  id="desc" name="desc" cols=15 rows=5></textarea><br>
                 <button class="btn" type="submit" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD DONATION</button>
 
-
+              </div>
 
             </form>
               <!-- <form action="pages/includes/signupfunction.php" method="POST" id="login" name="login">

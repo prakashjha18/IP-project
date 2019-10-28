@@ -148,7 +148,7 @@ items a {
     <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="pages/includes/logout.php">Logout</a></li>
@@ -234,7 +234,7 @@ items a {
 
         </div>
     </div>
-    
+
     <div class="content three_quarter">
       <?php $img[0]='css/img/pic1.jpg';?>
           <?php $img[1]='css/img/pic2.jpg';?>
@@ -257,14 +257,14 @@ items a {
             ?>
               <div class="modal-content" id="b<?php print_r($value[0]) ?>"> <span class="close">&#215;</span>
               <form action="javascript:void(0);">
-                        
+
                           <label for="usr">Please Enter Amount to be Donated</label>
                           <input type="text" class="form-control" iname="amnt" id="amnt" value="">
                           <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
-                        
+
                         <!--  Amount to be donated <input type="text" name="amnt" id="amnt" value=""> -->
-                    
-                    
+
+
                     <button class="btn pay" type="submit" id="contribute" style="background:#fda401;color:white;">Contribute</button>
               </form>
               </div>
@@ -419,7 +419,7 @@ items a {
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script>
-  
+
 $(document).on("click", ".myBtn", function () {
            var form = $(this).closest("form");
            var dtitle= form[0]["dtitle"].value;
@@ -460,7 +460,7 @@ $("body" ).on( "click",".close", function() {
 	$('.modal-content').hide();
 });
 $("form").submit(function(){
-  
+
           var form_data = $(this).closest("form");
           // console.log(form_data);
           $dnid = form_data[0]["dnid"].value;
@@ -470,16 +470,16 @@ $("form").submit(function(){
           // document.write(dnid);
           $('#myModal1').hide();
           // $dnid = document.getElementById('dnid').value;
-      
+
           // $amnt = document.getElementById('amnt').value;
-      
+
           //var data = form_data.split("&");
           // console.log(form_data[2]["amnt"].value);
           console.log($amnt);
           //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
           console.log($dnid);
           $.ajax({
-            
+
               // url: "http://localhost/be-the-change/getDonations.php",
               url : "getDonations.php",
               method:"POST",
@@ -487,7 +487,7 @@ $("form").submit(function(){
               dataType:"json",
               success:function(response){
                   // print_r(response);
-      
+
                   if(response.done=="Amount Donated!")
                   {
                       toastr["success"]("YOU HAVE A SUCCCESFULLY DONATED");
@@ -496,16 +496,16 @@ $("form").submit(function(){
                   }else{
                       alert(response.done);
                   }
-              
+
               },
               // error: function( jqXhr, textStatus, errorThrown ){
               //     console.log( JSON.stringify(errorThrown) );
               // }
               error: function () {
                   toastr["error"]("SOMETHING WENT WRONG1");
-              }  
-                  
-              
+              }
+
+
           });
       });
 

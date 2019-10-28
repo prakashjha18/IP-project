@@ -37,16 +37,18 @@ File: Layout CSS
 .grid-container1 {
   display: grid;
   grid-template-columns: 36% 36% 36%;
-  padding: 5px;
+  padding: 2px;
   height : ""
 
 }
 .grid-item1{
   border: 1px solid rgba(0, 0, 0, 0);
-  padding: 5px;
+  padding: 3px;
+  border-radius : 30px;
 }
 .first1	{
 	background-color: #E1E1E1;
+  border-radius: 40px;
 }
 .textwrap	{
 	background-color: #E1E1E1;
