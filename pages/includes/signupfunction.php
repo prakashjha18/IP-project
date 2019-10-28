@@ -18,17 +18,18 @@ require_once("functions.php");
     // else{
     //     $role="NGO";
     // }
-    
+
     if($connection->connect_error){
         echo "Connection failed";
     }
-    
+
     // print_r($stmt);
     // echo "Hello3";
     $uname=$_POST['username'];
     $u_email=$_POST['email'];
     $password=$_POST['password'];
     $u_phone = $_POST['phone'];
+
     if($_POST['category_id']=='NGO')
     {
         $u_type=3;
@@ -39,8 +40,15 @@ require_once("functions.php");
     {
         $u_type=2;
     }
-    
-    
+
+    $query = "SELECT * FROM users WHERE U_EMAIL = '$u_email'";
+    $select_user_details = mysqli_query($connection,$query);
+
+    if($row=mysqli_fetch_assoc($select_user_details)) {
+      $message = "Email already exists";
+      echo "<script type = 'text/javascript'> window.location.href='../../register.php'; alert('$message');</script>";
+    }
+    else  {
     $stmt= $connection->prepare("INSERT INTO users (UNAME, U_EMAIL, PASSWORD,U_PHONE,U_TYPE) VALUES (?,?,?,?,?);");
     $stmt->bind_param('sssii', $uname, $u_email, $password,$u_phone,$u_type);
     $stmt->execute();
@@ -48,11 +56,12 @@ require_once("functions.php");
     $_SESSION["phone_number"] = $u_phone;
     header("Location: ../../login.php");
     exit();
-        
+  }
+
 //    $sql = "SELECT UID FROM users where U_EMAIL = '$u_email' and PASSWORD = '$password'";
 //    $result = $connection->query($sql);
 //
-//    if ($result->num_rows == 1) 
+//    if ($result->num_rows == 1)
 //    {
 //        // output data of each row
 //        if($role==1)
@@ -69,5 +78,5 @@ require_once("functions.php");
 //    }
 //
 //    header("Location: ../../index.php");
-//    
+//
 ?>
