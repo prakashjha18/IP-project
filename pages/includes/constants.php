@@ -1,7 +1,7 @@
 <?php
 define("SERVER", "localhost");
 define("USER", "root");
-define("PASSWORD", "");
+define("PASSWORD", "Fingerprint7plus");
 define("DB", "bethechange");
 
 ?>
