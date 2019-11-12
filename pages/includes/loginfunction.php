@@ -44,6 +44,7 @@ if(!empty($_POST["email"]))
         $uid = $row['UID'];
         $role = $row['U_TYPE'];
         $phone = $row['U_PHONE'];
+        $email=$row['U_EMAIL'];
 //        print_r($role);
 
         //session variable according to role
@@ -52,8 +53,12 @@ if(!empty($_POST["email"]))
             $_SESSION['uid'] = $uid;
             $_SESSION['did'] = $uid;
             $_SESSION['vid'] = NULL;
+            $_SESSION['role'] = "Donor";
             $_SESSION['nid'] = NULL;
             $_SESSION['uname'] = $uname;
+            $_SESSION['phone']=$phone;
+            $_SESSION['email']=$email;
+
             header("Location: ../../donors.php");
         }
         elseif($role==2)
@@ -63,7 +68,9 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = $uid;
             $_SESSION['nid'] = NULL;
             $_SESSION['uname'] = $uname;
-
+            $_SESSION['phone']=$phone;
+            $_SESSION['email']=$email;
+            $_SESSION['role'] = "Volunteer";
             header("Location: ../../volunteers.php");
         }
         elseif($role==3){
@@ -72,7 +79,9 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
             $_SESSION['uname'] = $uname;
-            $_SESSION['email'] = $row['U_EMAIL'];
+            $_SESSION['phone']=$phone;
+            $_SESSION['email']=$email;
+            $_SESSION['role']='NGO';
             //echo $_SESSION['uname'];
             header("Location: ../../ngo.php");
             //exit();
@@ -83,6 +92,8 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = NULL;
             $_SESSION['uname'] = $uname;
+            $_SESSION['phone']=$phone;
+            $_SESSION['email']=$email;
             header("Location: ../../header.php");
         }
     }else {

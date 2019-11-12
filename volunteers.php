@@ -154,6 +154,7 @@ items a {
       <!-- ################################################################################################ -->
       <ul class="clear">
         <li><a href="index.php">Home</a></li>
+        <li><a href="profile.php">My Profile</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="pages/includes/logout.php">Logout</a></li>

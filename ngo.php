@@ -75,6 +75,7 @@ $donations=getngodonations();
         <li><a href="index.php">Home</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
+        <li><a href="profile.php">NGO profile</a></li>
         <li><a href="pages/includes/logout.php">Logout</a></li>
       </ul>
         <!-- <li class="active"><a class="drop" href="#">Pages</a>
