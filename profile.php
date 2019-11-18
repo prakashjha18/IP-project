@@ -8,7 +8,7 @@
   // exit;
   require_once("pages/includes/db.php");
 
-    session_start();
+  
     // echo  $_SESSION['uname'] ;
 
 
@@ -25,7 +25,7 @@
           </tr>
           <tr>
             <td valign="top"><div align="center">User ID:</div></td>
-            <td valign="top"> 
+            <td valign="top">
              <?php echo $_SESSION['uid'] ;?>
             </td>
           </tr>
@@ -35,18 +35,18 @@
           </tr>
           <tr>
             <td valign="top"><div align="center">User email:</div></td>
-            <td valign="top"> 
-            <?php echo $_SESSION['email'];?> 
+            <td valign="top">
+            <?php echo $_SESSION['email'];?>
             </td>
             </tr>
             <tr>
             <td valign="top"><div align="center">User phone number:</div></td>
-            <td valign="top"> 
+            <td valign="top">
             <?php echo $_SESSION['phone'];?>
             </td>
             </tr>
             <tr>
-                <td> 
+                <td>
                     <form action="pages/includes/logout.php">
                     <input type="submit" name="logout" value="logout">
             </table>
@@ -54,13 +54,3 @@
         </table>
     </body>
 </html>
-  
-  
-
-
-
-  
-  
-  
-  
-

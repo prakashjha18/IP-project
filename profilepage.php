@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-
 <?php
-require("pages/includes/ngofunction.php");
-//session_start();
-//print_r($_SESSION);
-if($_SESSION['nid']==NULL)
-{
-    header("Location: index.php");
-}
-// echo "string";
-$ngo=getngo();
-$event=getngoevent();
-$donations=getngodonations();
+  // require_once("pages/includes/functions.php");
+  require_once("pages/includes/db.php");
+  require_once("pages/includes/loginfunction.php");
+  $vol=getalldonors();
+  // echo "<pre>";
+  // print_r($vol);
+  // exit;
+  require_once("pages/includes/db.php");
 
-// print_r();
-// print_r($ngo['ORGNAME']);
-// print_r($_SESSION);
-//if($_SESSION['nid']==NULL)
-//{
-//    header("Location: index.php");
-//}
-//$donations=getngodonations();
-// print_r($donations);
+
+    // echo  $_SESSION['uname'] ;
+
 
 ?>
+
+<!DOCTYPE html>
+
+
 <html lang="">
 <head>
 <title>SAARTHI</title>
@@ -63,7 +56,7 @@ $donations=getngodonations();
   <div id="logo" class="fl_left">
       <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
-
+    <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
   </header>
 </div>
 <div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">
@@ -73,9 +66,9 @@ $donations=getngodonations();
 
     <ul class="clear">
         <li><a href="index.php">Home</a></li>
-        <li><a href="profilepage.php">NGO profile</a></li>
         <li><a href="collaboration.html">Collaborations</a></li>
         <li><a href="about.html">About Us</a></li>
+
         <li><a href="pages/includes/logout.php">Logout</a></li>
       </ul>
         <!-- <li class="active"><a class="drop" href="#">Pages</a>
@@ -192,19 +185,7 @@ $donations=getngodonations();
 
             <div class="group latest">
 
-                <article >
-                    <figure><a href="#"><img src="images/demo/ngo3.gif" alt=""></a>
-                    <figcaption>
-                        <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
-                    </figcaption>
-                    </figure>
-                    <div class="txtwrap">
-                    <h4 class="heading">HELLO NGO</h4>
 
-                    <p>We value the trust our donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. GiveAssured is our seal of trust built over 18 years of operations</p>
-
-                    </div>
-                </article>
 
             </div>
 
@@ -213,30 +194,46 @@ $donations=getngodonations();
 
         </section><br><br>
         <div class="one_half first">
-            <section class="  clear">
-                <div class="group latest">
-                    <article >
-                        <div class="txtwrap">
-                        <center><h2 class="heading"><a href="respngoevent.php">NGO EVENT >></a></h2></center>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
-                        <a href="add-event.php"><button class="btn" style="margin-left : 35%">ADD EVENTS</button></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="clear"></div>
-            </section>
+
         </div>
         <div class="one_half">
         <section class="  clear">
                 <div class="group latest">
                     <article >
-                        <div class="txtwrap">
-                        <center><h2 class="heading"><a href="respngodonation.php">NGO DONATION >></a></h2></center>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
-                        <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
-                        <a href="add-donation.php"><button class="btn" style="margin-left : 32%" >ADD DONATIONS</button></a>
-                        </div>
+                          <table align="center" style="padding : 10px">
+                               <tr>
+                               <td width='82' valign='top'><div align='center'>Name:</div></td>
+                               <td width='165' valign='top'>
+                                 <?php echo $_SESSION["uname"];?>
+                                </td>
+                             </tr>
+                             <tr>
+                               <td valign="top"><div align="center">User ID:</div></td>
+                               <td valign="top">
+                                <?php echo $_SESSION['uid'] ;?>
+                               </td>
+                             </tr>
+                             <tr>
+                               <td valign='top'><div align='center'>User type </div></td>
+                               <td valign='top'><?php echo $_SESSION['role']; ?></td>
+                             </tr>
+                             <tr>
+                               <td valign="top"><div align="center">User email:</div></td>
+                               <td valign="top">
+                               <?php echo $_SESSION['email'];?>
+                               </td>
+                               </tr>
+                               <tr>
+                               <td valign="top"><div align="center">User phone number:</div></td>
+                               <td valign="top">
+                               <?php echo $_SESSION['phone'];?>
+                               </td>
+                               </tr>
+
+                               </table>
+
+                               </div>
+                           </table>
                     </article>
                 </div>
                 <div class="clear"></div>

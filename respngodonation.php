@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Drywest
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
+
 <?php
 require_once("pages/includes/functions.php");
  session_start();
@@ -116,7 +110,7 @@ $donate=ngodonations($nid);
     <div id="logo" class="fl_left">
       <h1><a href="index.php">SAARTHI</a></h1>
     </div>
-    <div class="fl_right"><a class="btn" href="#">Quam quisque vel</a></div>
+
     <!-- ################################################################################################ -->
   </header>
 </div>

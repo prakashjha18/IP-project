@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Drywest
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
+
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
@@ -50,7 +44,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <div id="logo" class="fl_left">
       <h1 ><a href="index.php">SAARTHI</a></h1>
     </div>
-    <div class="fl_right"><a class="btn" href="#">make a donation</a></div>
+
     <!-- ################################################################################################ -->
   </header>
 </div>
