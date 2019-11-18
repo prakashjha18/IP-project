@@ -45,9 +45,9 @@ require_once("functions.php");
     }
 
     $query = "SELECT * FROM users WHERE U_EMAIL = '$u_email'";
-    $select_user_details = mysqli_query($connection,$query);
+    $result = mysqli_query($connection,$query);
 
-    if($row=mysqli_fetch_assoc($select_user_details)) {
+    if($row=mysqli_fetch_assoc($result)) {
       $message = "Email already exists";
       echo "<script type = 'text/javascript'> window.location.href='../../register.php'; alert('$message');</script>";
     }
@@ -57,20 +57,8 @@ require_once("functions.php");
     $stmt->execute();
     $stmt->close();
     $_SESSION["phone_number"] = $u_phone;
-    echo "<script type = 'text/javascript'> window.location.href='../../login.php'; alert('You have successfully registered as a $type');</script>";
-    
-    // $query= "SELECT * FROM users WHERE UNAME='$uname'";
-    // $result=mysqli_query($connection,$query);
-    // if(mysqli_num_rows($result)>0){
-    
-    //     // while($row=mysqli_fetch_assoc($result)){
-    //     //        $userid=$row['UID'];
-    //     //        $query="INSERT INTO profileimg (UID,STATUS)
-    //     //        VALUES  ('$userid',1)";
-    //     //        mysqli_query($connection,$query);
-    //     //        header("location: donorprofile.php");
-    //     //    }
-    //     // }
+    echo "<script tpye = 'text/javascript'> window.location.href='../../login.php'; alert('You have successfully registered as a $type');</script>";
+
     exit();
   }
 

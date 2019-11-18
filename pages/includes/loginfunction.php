@@ -18,7 +18,7 @@ if(!empty($_POST["email"]))
     $query = "SELECT * FROM users WHERE U_EMAIL = '$email' and PASSWORD = '$password'";
     $result_can = mysqli_query($connection, $query);
 
-    
+
 
 
     // print_r($query);
@@ -97,7 +97,7 @@ if(!empty($_POST["email"]))
             header("Location: ../../header.php");
         }
     }else {
-      $message = "Please enter correct details";
+      $message = "Your E-Mail ID or Password is incorrect";
       echo "<script type = 'text/javascript'> window.location.href='../../login.php'; alert('$message');</script>";
       //header("Location: ../../login.php");
     }
